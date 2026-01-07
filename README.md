@@ -55,3 +55,7 @@ kgl-app/
 │ ├── inventory.html
 │ └── reports.html
 └── README.md
+
+## Exercise
+
+modify js file for login page and formatting all HTML and CSS files
