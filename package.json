@@ -1,0 +1,29 @@
+{
+  "name": "karibo_project",
+  "version": "1.0.0",
+  "description": "This is a full-stack web application built for Karibu Groceries LTD (KGL), a wholesale cereals distributor in Uganda with two branches (Maganjo and Matugga).\r The system replaces manual record-keeping in ruled books with a secure, role-based digital solution for managing procurement, sales, credit sales, and inventory.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adam-Ahmad/KARIBO_PROJECT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Adam-Ahmad/KARIBO_PROJECT/issues"
+  },
+  "homepage": "https://github.com/Adam-Ahmad/KARIBO_PROJECT#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^17.0.0",
+    "prettier": "^3.7.4"
+  }
+}
