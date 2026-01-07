@@ -1,0 +1,99 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(rgba(102, 250, 102, 0.8), rgba(34, 139, 34, 0.7)),
+    url("/Images/Beans_in_bags.jpg") no-repeat center center/cover;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginCard {
+  background: rgb(255, 255, 255);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 450px;
+  width: 100%;
+  border: 5px solid #fe5900; /* Orange border accent */
+  text-align: center;
+}
+
+.logo-img {
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.welcomeText {
+  font-size: 1.2rem;
+  color: #0a6c11;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+input {
+  border-color: #fe5900;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  width: 90%;
+  font-size: 20px;
+}
+
+input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+}
+
+.loginButton {
+  background-color: #28a745; /* Fresh green button */
+  border: none;
+  font-weight: 600;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.loginButton:hover {
+  background-color: #218838;
+  transform: translateY(-3px);
+}
+
+.footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #0a6c11;
+}
+
+@media (max-width: 576px) {
+  .loginCard {
+    padding: 2rem;
+    margin: 1rem;
+    border-width: 4px;
+  }
+  .logo-img {
+    height: 80px;
+  }
+} /* Small Screens */
+/* @media (max-width: 768px) {
+  .container {
+    width: 750px;
+  }
+} */
+
+/* Medium Screens */
+
+/* @media (max-width: 992px) {
+  .container {
+    width: 970px;
+  }
+} */
+
+/* Larg Screens */
+
+/* @media (max-width: 1200px) {
+  .container {
+    width: 117 0px;
+  }
+} */

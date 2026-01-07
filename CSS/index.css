@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fffacd; /* Light yellow warmth */
+  color: #333;
+}
+
+/* Hero Section */
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(102, 250, 102, 0.8), rgba(34, 139, 34, 0.7)),
+    url("/Images/Beans_in_bags.jpg") no-repeat center center/cover;
+  display: flex;
+  color: white;
+  padding: 10px 30px;
+}
+
+.hero h1 {
+  font-size: 80px;
+  font-weight: bold;
+}
+.hero p {
+  font-size: 50px;
+  padding: 20px;
+  line-height: 1.6;
+  justify-content: center;
+}
+.button {
+  background-color: #fe5900; /* Orange */
+  color: white;
+  padding: 20px 40px;
+  border-radius: 50px;
+  display: inline-block;
+  text-decoration: none;
+  /* font-weight: 600;
+  transition: all 0.3s; */
+}
+
+.button:hover {
+  background-color: #e04e00;
+  transform: scale(1.05);
+}
+
+/* .mission-box {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 380px;
+} */
+
+/* Sections */
+/* .section-padding {
+  padding: 5rem 0;
+}
+
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.dashboard-preview img {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background: #228b22;
+  color: white;
+  padding: 3rem 0;
+} */
+
+/* Small Screens */
+@media (max-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  .hero {
+    padding: auto;
+    height: 120vh;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .container p {
+    font-size: 16px;
+  }
+  /* .mission-box {
+    position: static;
+    max-width: 100%;
+    margin: 2rem auto;
+  } */
+}
+
+/* Medium Screens */
+
+@media (max-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Larg Screens */
+
+@media (max-width: 1200px) {
+  .container {
+    width: 117 0px;
+  }
+}
