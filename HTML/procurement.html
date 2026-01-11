@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Procurement - Karibu Groceries LTD</title>
+    <!-- Awesome Icons -->
+    <link rel="stylesheet" href="/CSS/all.min.css" />
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="/CSS/procurement.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h3 class="text-center">
+          <i class="fa-regular fa-truck"></i>
+          Record New Procurement
+        </h3>
+        <!-- Procurement Form -->
+        <form class="procurementForm">
+          <div class="form-text">
+            <label class="form-label">Produce Name</label>
+            <select
+              name="produceName"
+              title="Select produce..."
+              class="form-select"
+              required
+            >
+              <option value="">Select produce...</option>
+              <option>Beans</option>
+              <option>Grain Maize</option>
+              <option>Cow peas</option>
+              <option>G-nuts</option>
+              <option>Soybeans</option>
+            </select>
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Tonnage (kg)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="tonnage"
+              placeholder="e.g., 500"
+              min="100"
+              required
+            />
+            <p>Minimum 100 kg</p>
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Total Cost (UGX)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="cost"
+              placeholder="e.g., 150000"
+              min="10000"
+              required
+            />
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Selling Price (UGX/kg)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="sellingPrice"
+              placeholder="e.g., 3000"
+              min="1000"
+              required
+            />
+          </div>
+
+          <div class="form-text">
+            <label class="form-label">Dealer/Supplier Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="dealerName"
+              placeholder="e.g., John Doe"
+              minlength="2"
+              required
+            />
+          </div>
+
+          <div class="form-text">
+            <label class="form-label">Contact Phone</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="contact"
+              pattern="\+256[0-9]{9}"
+              placeholder="+2567XXXXXXXX"
+              required
+            />
+          </div>
+
+          <div class="button-container">
+            <button type="submit" class="button">
+              <i class="fa-regular fa-circle-check"></i> Submit Procurement
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

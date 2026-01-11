@@ -1,45 +1,64 @@
+<!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Karibu Groceries LTD - Login</title>
-
-    <!-- Normalized CSS -->
-    <link rel="stylesheet" href="/CSS/normalize.css" />
-
-    <!-- External CSS -->
+    <title>Login - Karibu Groceries LTD</title>
     <link rel="stylesheet" href="/CSS/login.css" />
   </head>
-
   <body>
-    <div class="loginCard">
-      <!-- Logo -->
-      <div class="logo">
+    <div class="login-container">
+      <div class="login-card">
         <img
           src="/logo/karibu_logo.svg"
           alt="Karibu Groceries LTD"
           class="logo-img"
         />
-      </div>
 
-      <!-- Welcome Text -->
-      <div class="welcomeText">
-        <strong>Welcome to KGL Produce Management System</strong>
-      </div>
+        <h2 class="welcome-text">Welcome Back</h2>
+        <p class="subtitle">Sign in to continue</p>
 
-      <!-- Login Form -->
-      <form id="loginForm">
-        <input type="text" id="username" placeholder="Username" required />
-        <input type="password" id="password" placeholder="Password" required />
-        <button type="submit" class="loginButton">Login</button>
-      </form>
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="username"
+              placeholder="Username"
+              required
+              autofocus
+            />
+          </div>
 
-      <!-- Footer -->
-      <div class="footer">
-        © 2026 Karibu Groceries LTD. All rights reserved.
+          <div class="form-group">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="login-button">Login</button>
+
+          <div class="error-message" id="errorMsg"></div>
+        </form>
+
+        <div class="login-footer">
+          <a href="index.html">← Back to Home</a>
+        </div>
       </div>
     </div>
-    <script src="/Js/login.js"></script>
+
+    <!-- Optional: simple client-side error display -->
+    <script>
+      document.getElementById("loginForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const errorEl = document.getElementById("errorMsg");
+        errorEl.textContent = "";
+        errorEl.classList.remove("show");
+        // Add your real login logic here
+      });
+    </script>
   </body>
 </html>

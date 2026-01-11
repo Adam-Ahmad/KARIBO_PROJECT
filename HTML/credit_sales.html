@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Sales - Karibu Groceries LTD</title>
+    <!-- Awesome Icons -->
+    <link rel="stylesheet" href="/CSS/all.min.css" />
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="/CSS/credit_sales.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h3 class="text-center">
+          <i class="fa-solid fa-credit-card"></i>
+          Record Credit Sale
+        </h3>
+
+        <form id="creditForm" class="creditForm">
+          <div class="form-text">
+            <label class="form-label">Buyer Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="e.g., Jane Smith"
+              minlength="2"
+              required
+            />
+          </div>
+
+          <div class="form-text">
+            <label class="form-label">National ID / NIN</label>
+            <input
+              type="text"
+              class="form-control"
+              pattern="[A-Za-z0-9]{8,14}"
+              required
+              placeholder="e.g. CM1234567890AB"
+            />
+          </div>
+
+          <div class="form-text">
+            <label class="form-label">Location / Village</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="e.g., Kiryandongo"
+              minlength="2"
+              required
+            />
+          </div>
+
+          <div class="form-text">
+            <label class="form-label">Contact Phone</label>
+            <input
+              type="tel"
+              class="form-control"
+              placeholder="e.g., +256712345678"
+              pattern="\+256[0-9]{9}"
+              required
+            />
+          </div>
+
+          <div class="form-text">
+            <label class="form-label">Product</label>
+            <select class="form-select" title="Select a product" required>
+              <option value="">Select product...</option>
+              <option>Beans</option>
+              <option>Grain Maize</option>
+              <option>Cow peas</option>
+              <option>G-nuts</option>
+              <option>Soybeans</option>
+            </select>
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Tonnage Sold (kg)</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="e.g., 50"
+              min="1"
+              step="0.1"
+              required
+            />
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Amount Due (UGX)</label>
+            <input
+              type="number"
+              class="form-control"
+              placeholder="e.g., 150000"
+              min="10000"
+              required
+            />
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Due Date</label>
+            <input
+              type="date"
+              class="form-control"
+              placeholder="e.g., 2026-01-01"
+              required
+            />
+          </div>
+
+          <div class="button-container">
+            <button type="submit" class="button">
+              <i class="fa-regular fa-circle-check"></i> Record Credit Sale
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

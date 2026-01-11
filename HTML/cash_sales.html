@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cash Sales - Karibu Groceries LTD</title>
+    <!-- Awesome Icons -->
+    <link rel="stylesheet" href="/CSS/all.min.css" />
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="/CSS/cash_sales.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h3 class="text-center">
+          <i class="fa-solid fa-money-bill"></i>
+          Record Cash Sale
+        </h3>
+
+        <form class="salesForm">
+          <div class="form-text">
+            <label class="form-label">Select Product</label>
+            <select
+              class="form-select"
+              name="productName"
+              title="Select a product"
+              required
+            >
+              <option value="">Select produce...</option>
+              <option>Beans</option>
+              <option>Grain Maize</option>
+              <option>Cow peas</option>
+              <option>G-nuts</option>
+              <option>Soybeans</option>
+            </select>
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Available Stock</label>
+            <div class="input-group">
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Available stock per kg"
+                id="available"
+                disabled
+              />
+            </div>
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Current Price</label>
+            <div class="input-group">
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Current price in UGX"
+                id="price"
+                disabled
+              />
+            </div>
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Tonnage Sold (kg)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="tonnage"
+              placeholder="e.g., 50"
+              min="1"
+              step="0.1"
+              required
+            />
+          </div>
+
+          <div class="form-number">
+            <label class="form-label">Amount Paid (UGX)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="amountPaid"
+              placeholder="e.g., 150000"
+              min="10000"
+              required
+            />
+          </div>
+
+          <div class="form-text">
+            <label class="form-label">Buyer Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="buyerName"
+              placeholder="e.g., Jane Smith"
+              minlength="2"
+              required
+            />
+          </div>
+
+          <div class="button-container">
+            <button type="submit" class="button">
+              <i class="fa-regular fa-circle-check"> </i> Record Cash Sale
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

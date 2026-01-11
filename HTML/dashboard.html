@@ -1,0 +1,104 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Karibu Groceries LTD</title>
+
+    <!-- Awesome Icons -->
+    <link rel="stylesheet" href="/CSS/all.min.css" />
+    <!-- CSS Styling -->
+
+    <link rel="stylesheet" href="/CSS/dashbord.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <!-- Sidebar logo -->
+
+      <a class="logo">
+        <img
+          src="/logo/karibu_logo.svg"
+          alt="Karibu Groceries LTD"
+          width="250"
+          height="100"
+        />
+      </a>
+
+      <!-- sidebar Navigation Links -->
+
+      <ul class="nav-links">
+        <li>
+          <a href="dashboard.html" class="nav-link"
+            ><i class="fa-solid fa-gauge"></i> Dashboard</a
+          >
+        </li>
+        <li>
+          <a href="procurement.html" class="nav-link"
+            ><i class="fa-solid fa-truck"></i> Procurement</a
+          >
+        </li>
+        <li class="agent-manager">
+          <a href="cash_sales.html" class="nav-link"
+            ><i class="fa-solid fa-money-bill-wave"></i> Cash Sales</a
+          >
+        </li>
+        <li class="agent-manager">
+          <a href="credit_sales.html" class="nav-link">
+            <i class="fa-solid fa-credit-card"></i> Credit Sales</a
+          >
+        </li>
+        <li>
+          <a href="inventory.html" class="nav-link"
+            ><i class="fa-solid fa-boxes-stacked"></i> Inventory</a
+          >
+        </li>
+        <li class="director-only">
+          <a href="reports.html" class="nav-link"
+            ><i class="fa-solid fa-chart-line"></i> Reports</a
+          >
+        </li>
+        <li class="logout">
+          <a href="login.html"
+            ><i class="fa-solid fa-right-from-bracket"></i>Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <!-- The Heading -->
+      <div class="heading">
+        <h1>Dashboard</h1>
+        <div class="date">2026<i class="fa-solid fa-calendar"></i></div>
+      </div>
+      <!-- Details Cards -->
+
+      <div class="cards">
+        <div class="card-body">
+          <h5>Total Stock (kg)</h5>
+          <h2>—</h2>
+        </div>
+        <div class="card-body">
+          <h5>Today's Sales (UGX)</h5>
+          <h2>—</h2>
+        </div>
+        <div class="card-body">
+          <h5>Low Stock Items</h5>
+          <h2>—</h2>
+        </div>
+      </div>
+
+      <!-- Role messages -->
+      <!-- <div class="massages">
+        <div class="massage">
+          Director: View detailed analytics in the Reports section.
+        </div>
+        <div class="massage">
+          Manager: Record new procurement to update inventory.
+        </div>
+        <div class="massage">Agent: Record sales from your branch.</div>
+      </div> -->
+    </div>
+  </body>
+</html>

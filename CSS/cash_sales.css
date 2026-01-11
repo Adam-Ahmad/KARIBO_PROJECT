@@ -37,11 +37,8 @@ body {
   font-weight: 600;
   margin-bottom: 10px;
 }
-.procurementForm {
+.salesForm {
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
 .form-label {
   font-size: 1rem;
@@ -56,11 +53,8 @@ body {
   margin-bottom: 12px;
   margin-bottom: 6px;
 }
-
-p {
-  font-size: 0.9rem;
-  color: blue;
-  margin-top: 6px;
+option {
+  color: #333;
 }
 input {
   outline: none;
