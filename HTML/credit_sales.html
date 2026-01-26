@@ -1,119 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Credit Sales - Karibu Groceries LTD</title>
-    <!-- Awesome Icons -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+    <!-- Fontawesome Styling -->
     <link rel="stylesheet" href="/CSS/all.min.css" />
-    <!-- CSS Styling -->
+    <!-- External CSS File -->
     <link rel="stylesheet" href="/CSS/credit_sales.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="card">
-        <h3 class="text-center">
-          <i class="fa-solid fa-credit-card"></i>
-          Record Credit Sale
-        </h3>
+    <div class="container-fluid m-0 p-0">
+      <!-- Sidebar -->
+      <aside
+        class="sidebar rounded-top w-sidebar-width bg-white position-fixed h-100 px-3 shadow-sm"
+        id="navbarSupportedContent"
+      >
+        <div class="p-3">
+          <!-- Logo -->
+          <a
+            class="navbar-brand pb-4 d-block text-center mb-1"
+            href="dashboard.html"
+          >
+            <img src="/logo/karibu_logo.svg" alt="Karibu" height="60" />
+          </a>
+          <!-- Navigation Links -->
+          <ul class="nav flex-column gap-1">
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link"
+                ><i class="fas fa-gauge me-2"></i> Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="procurement.html" class="nav-link"
+                ><i class="fas fa-truck me-2"></i> Procurement</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="cash_sales.html" class="nav-link"
+                ><i class="fas fa-money-bill-wave me-2"></i> Cash Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="credit_sales.html" class="nav-link active"
+                ><i class="fas fa-credit-card me-2"></i> Credit Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="stocks.html" class="nav-link"
+                ><i class="fas fa-boxes-stacked me-2"></i> Stock</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="reports.html" class="nav-link"
+                ><i class="fas fa-chart-line me-2"></i> Reports</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="login.html"
+                class="nav-link position-absolute bottom-0 mb-3"
+                ><i class="fas fa-right-from-bracket me-2"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <!--Navbar Toggler -->
+      <nav class="navbar bg-white mb-1 p-3 shadow-sm">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="true"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- Main Content -->
+      <main class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 col-xl-8">
+            <!-- card container -->
+            <div class="card-modern p-4 p-md-5">
+              <h2 class="title-orange text-center mb-5 fw-bold">
+                <i class="fas fa-credit-card me-2"></i> Record Credit Sale
+              </h2>
+              <!-- Form -->
+              <form class="row g-4">
+                <div class="col-md-6">
+                  <label class="form-label">Buyer Name</label>
+                  <input
+                    id="buyer-name"
+                    title="Enter Buyer Name"
+                    type="text"
+                    class="form-control form-control-lg"
+                    required
+                    placeholder="e.g. Adam Ahmad"
+                  />
+                </div>
 
-        <form id="creditForm" class="creditForm">
-          <div class="form-text">
-            <label class="form-label">Buyer Name</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="e.g., Jane Smith"
-              minlength="2"
-              required
-            />
-          </div>
+                <div class="col-md-6">
+                  <label class="form-label">National ID (NIN)</label>
+                  <input
+                    id="buyer-nin"
+                    type="text"
+                    class="form-control form-control-lg"
+                    pattern="[A-Za-z0-9]{8,14}"
+                    required
+                    placeholder="e.g. CM9876543210XY"
+                    title="Enter NIN"
+                  />
+                </div>
 
-          <div class="form-text">
-            <label class="form-label">National ID / NIN</label>
-            <input
-              type="text"
-              class="form-control"
-              pattern="[A-Za-z0-9]{8,14}"
-              required
-              placeholder="e.g. CM1234567890AB"
-            />
-          </div>
+                <div class="col-md-6">
+                  <label class="form-label">Location</label>
+                  <input
+                    id="buyer-location"
+                    type="text"
+                    class="form-control form-control-lg"
+                    required
+                    placeholder="e.g. Kamwenge"
+                    title="Enter Location"
+                  />
+                </div>
 
-          <div class="form-text">
-            <label class="form-label">Location / Village</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="e.g., Kiryandongo"
-              minlength="2"
-              required
-            />
-          </div>
+                <div class="col-md-6">
+                  <label class="form-label">Contact Phone</label>
+                  <input
+                    id="tel"
+                    type="tel"
+                    class="form-control form-control-lg"
+                    pattern="\+256[0-9]{9}"
+                    required
+                    placeholder="+2567XXXXXXXX"
+                    title="Enter Telephone Number"
+                  />
+                </div>
 
-          <div class="form-text">
-            <label class="form-label">Contact Phone</label>
-            <input
-              type="tel"
-              class="form-control"
-              placeholder="e.g., +256712345678"
-              pattern="\+256[0-9]{9}"
-              required
-            />
-          </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="product">Product</label>
+                  <select
+                    id="product"
+                    class="form-select form-select-lg"
+                    required
+                    title="Select a product"
+                  >
+                    <option value="">Select produce...</option>
+                    <option>Beans</option>
+                    <option>Grain Maize</option>
+                    <option>Cow peas</option>
+                    <option>G-nuts</option>
+                    <option>Soybeans</option>
+                  </select>
+                </div>
 
-          <div class="form-text">
-            <label class="form-label">Product</label>
-            <select class="form-select" title="Select a product" required>
-              <option value="">Select product...</option>
-              <option>Beans</option>
-              <option>Grain Maize</option>
-              <option>Cow peas</option>
-              <option>G-nuts</option>
-              <option>Soybeans</option>
-            </select>
-          </div>
+                <div class="col-md-3">
+                  <label class="form-label">Tonnage Sold (kg)</label>
+                  <input
+                    id="tonnage-sold"
+                    type="number"
+                    class="form-control form-control-lg"
+                    min="0.1"
+                    step="0.1"
+                    required
+                    title="Enter Tonnage Sold"
+                  />
+                </div>
 
-          <div class="form-number">
-            <label class="form-label">Tonnage Sold (kg)</label>
-            <input
-              type="number"
-              class="form-control"
-              placeholder="e.g., 50"
-              min="1"
-              step="0.1"
-              required
-            />
-          </div>
+                <div class="col-md-3">
+                  <label class="form-label">Amount Due (UGX)</label>
+                  <input
+                    id="amount-due"
+                    type="number"
+                    class="form-control form-control-lg"
+                    min="10000"
+                    required
+                    title="Enter Amount Due"
+                  />
+                </div>
 
-          <div class="form-number">
-            <label class="form-label">Amount Due (UGX)</label>
-            <input
-              type="number"
-              class="form-control"
-              placeholder="e.g., 150000"
-              min="10000"
-              required
-            />
-          </div>
+                <div class="col-md-12">
+                  <label class="form-label">Due Date</label>
+                  <input
+                    id="due-date"
+                    type="date"
+                    class="form-control form-control-lg"
+                    required
+                    title="Select Due Date"
+                  />
+                </div>
 
-          <div class="form-number">
-            <label class="form-label">Due Date</label>
-            <input
-              type="date"
-              class="form-control"
-              placeholder="e.g., 2026-01-01"
-              required
-            />
+                <div class="col-12 text-center mt-4">
+                  <button
+                    type="submit"
+                    class="btn btn-primary-custom btn-lg px-5 py-3 rounded-pill fw-bold"
+                  >
+                    <i class="fas fa-save me-2"></i> Record
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-
-          <div class="button-container">
-            <button type="submit" class="button">
-              <i class="fa-regular fa-circle-check"></i> Record Credit Sale
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+      </main>
     </div>
+    <script src="/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/all.min.js"></script>
   </body>
 </html>

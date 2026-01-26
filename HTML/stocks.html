@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory - Karibu Groceries LTD</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+    <!-- Fontawesome Styling -->
+    <link rel="stylesheet" href="/CSS/all.min.css" />
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="/CSS/stocks.css" />
+  </head>
+  <body>
+    <div class="container-fluid m-0 p-0">
+      <!-- Sidebar -->
+      <aside
+        class="sidebar rounded-top w-sidebar-width bg-white position-fixed h-100 px-3 shadow-sm"
+        id="navbarSupportedContent"
+      >
+        <div class="p-3">
+          <!-- Logo -->
+          <a
+            class="navbar-brand pb-4 d-block text-center mb-1"
+            href="dashboard.html"
+          >
+            <img src="/logo/karibu_logo.svg" alt="Karibu" height="60" />
+          </a>
+          <!-- Navigation Links -->
+          <ul class="nav flex-column gap-1">
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link"
+                ><i class="fas fa-gauge me-2"></i> Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="procurement.html" class="nav-link"
+                ><i class="fas fa-truck me-2"></i> Procurement</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="cash_sales.html" class="nav-link"
+                ><i class="fas fa-money-bill-wave me-2"></i> Cash Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="credit_sales.html" class="nav-link"
+                ><i class="fas fa-credit-card me-2"></i> Credit Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="stocks.html" class="nav-link active"
+                ><i class="fas fa-boxes-stacked me-2"></i> Stock</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="reports.html" class="nav-link"
+                ><i class="fas fa-chart-line me-2"></i> Reports</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="login.html"
+                class="nav-link position-absolute bottom-0 mb-3"
+                ><i class="fas fa-right-from-bracket me-2"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <!--Navbar Toggler -->
+      <nav class="navbar bg-white mb-1 p-3 shadow-sm">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="true"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- Main Content -->
+      <main class="container py-5">
+        <!-- card container -->
+        <div class="card-modern p-4 p-md-5">
+          <h2 class="title-orange text-center mb-5 fw-bold">
+            <i class="fas fa-boxes-stacked me-2"></i> Current Inventory
+          </h2>
+          <!-- Table -->
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th>Produce</th>
+                  <th>Tonnage (kg)</th>
+                  <th>Price (UGX/kg)</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Beans</td>
+                  <td>2,450</td>
+                  <td>3,200</td>
+                  <td><span class="status-normal">Normal</span></td>
+                </tr>
+                <tr>
+                  <td>Cow peas</td>
+                  <td>78</td>
+                  <td>4,100</td>
+                  <td><span class="status-critical">Critical - Low</span></td>
+                </tr>
+                <tr>
+                  <td>Grain Maize</td>
+                  <td>1,200</td>
+                  <td>1,800</td>
+                  <td><span class="status-low">Low Stock</span></td>
+                </tr>
+                <tr>
+                  <td>G-nuts</td>
+                  <td>950</td>
+                  <td>5,500</td>
+                  <td><span class="status-normal">Normal</span></td>
+                </tr>
+                <tr>
+                  <td>Soybeans</td>
+                  <td>600</td>
+                  <td>4,800</td>
+                  <td><span class="status-low">Low Stock</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- bootstrap Js -->
+    <script src="/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/all.min.js"></script>
+  </body>
+</html>

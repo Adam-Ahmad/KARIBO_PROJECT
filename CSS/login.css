@@ -1,150 +1,94 @@
-/* login.css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* start main Color */
+:root {
+  --primary: #ef5400;
+  --primary-dark: #c94d00;
+  --success: #27ae60;
+  --danger: #c0392b;
+  --dark: #2c3e50;
+  --light: #f8f9fa;
+  --gray: #6c757d;
 }
+/* End main Color */
 
+/* start Body */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
+  background: var(--light);
   min-height: 100vh;
-  background: linear-gradient(
-      rgba(250, 203, 102, 0.75),
-      rgba(66, 207, 66, 0.65)
-    ),
-    url("/Images/Beans_in_bags.jpg") center/cover no-repeat;
-  background-size: cover;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  color: #222;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+/* End Body */
+
+/* start Card */
+.card-modern {
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+}
+/* End Card */
+
+/* start Title */
+.title {
+  color: var(--primary);
+}
+/* End Title */
+
+/* Start Button */
+.btn-primary-custom {
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
-.login-container {
-  width: 100%;
-  max-width: 460px;
+.btn-primary-custom:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+/* End Button */
+
+/* Start toast */
+.toast-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+  max-width: 380px;
 }
 
-.login-card {
-  background: rgba(255, 255, 255, 0.96);
-  /* -webkit-backdrop-filter: blur(10px); */
-  padding: 2.8rem 2.2rem;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  text-align: center;
-}
-
-.logo-img {
-  height: 90px;
-  width: auto;
-  margin-bottom: 1.8rem;
-}
-
-.welcome-text {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1b5e20;
-  margin-bottom: 0.4rem;
-}
-
-.subtitle {
-  color: #555;
-  margin-bottom: 2.2rem;
-  font-size: 1.05rem;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.3rem;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 1.1rem 1.6rem;
-  font-size: 1.05rem;
-  border: 2px solid #ddd;
-  border-radius: 50px;
-  transition: all 0.25s ease;
-}
-
-.form-group input:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgb(253, 137, 65);
-}
-
-.login-button {
-  background: #9c640f;
+.toast {
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
   color: white;
-  border: none;
-  padding: 1.1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  margin-top: 0.6rem;
-}
-
-.login-button:hover {
-  background-color: #fe5400;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(254, 84, 0, 0.25);
-}
-
-.login-button:active {
-  transform: translateY(0);
-}
-
-.error-message {
-  color: #d32f2f;
-  font-size: 0.95rem;
-  min-height: 1.3em;
-  margin-top: 0.8rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateX(120%);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: all 0.4s ease;
 }
 
-.error-message.show {
+.toast.show {
+  transform: translateX(0);
   opacity: 1;
 }
 
-.login-footer {
-  margin-top: 1.8rem;
-  font-size: 0.95rem;
-  color: #444;
+.toast.success {
+  background: #48bb78;
 }
 
-.login-footer a {
-  color: #1b5e20;
-  text-decoration: none;
-  font-weight: 500;
+.toast.error {
+  background: #f56565;
 }
 
-.login-footer a:hover {
-  text-decoration: underline;
+.toast-icon {
+  font-size: 24px;
+  line-height: 1;
 }
-
-/* Responsive */
-@media (max-width: 480px) {
-  .login-card {
-    padding: 2.2rem 1.6rem;
-    border-radius: 16px;
-  }
-  .logo-img {
-    height: 70px;
-  }
-  .welcome-text {
-    font-size: 1.7rem;
-  }
-}
-@media (max-width: 360px) {
-  .login-card {
-    padding: 1.8rem 1.2rem;
-  }
-  .welcome-text {
-    font-size: 1.5rem;
-  }
-}
+/* end Toast */

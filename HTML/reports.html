@@ -1,38 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reports & Analytics - Karibu Groceries LTD</title>
-    <!-- Awesome Icons -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+    <!-- Fontawesome Styling -->
     <link rel="stylesheet" href="/CSS/all.min.css" />
-    <!-- CSS Styling -->
+    <!-- External CSS File -->
     <link rel="stylesheet" href="/CSS/reports.css" />
   </head>
   <body>
-    <div class="reports-container">
-      <div class="card">
-        <h2 class="text-center">
-          <i class="fa-solid fa-chart-line"></i> Business Reports & Analytics
-        </h2>
+    <div class="container-fluid m-0 p-0">
+      <!-- Sidebar -->
+      <aside
+        class="sidebar rounded-top w-sidebar-width bg-white position-fixed h-100 px-3 shadow-sm"
+        id="navbarSupportedContent"
+      >
+        <div class="p-3">
+          <!-- Logo -->
+          <a
+            class="navbar-brand pb-4 d-block text-center mb-1"
+            href="dashboard.html"
+          >
+            <img src="/logo/karibu_logo.svg" alt="Karibu" height="60" />
+          </a>
+          <!-- Navigation Links -->
+          <ul class="nav flex-column gap-1">
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link"
+                ><i class="fas fa-gauge me-2"></i> Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="procurement.html" class="nav-link"
+                ><i class="fas fa-truck me-2"></i> Procurement</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="cash_sales.html" class="nav-link"
+                ><i class="fas fa-money-bill-wave me-2"></i> Cash Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="credit_sales.html" class="nav-link"
+                ><i class="fas fa-credit-card me-2"></i> Credit Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="stocks.html" class="nav-link"
+                ><i class="fas fa-boxes-stacked me-2"></i> Stock</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="reports.html" class="nav-link active"
+                ><i class="fas fa-chart-line me-2"></i> Reports</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="login.html"
+                class="nav-link position-absolute bottom-0 mb-3"
+                ><i class="fas fa-right-from-bracket me-2"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <!--Navbar Toggler -->
+      <nav class="navbar bg-white mb-1 p-3 shadow-sm">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="true"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- Main Content -->
+      <main class="container py-5">
+        <div class="card-modern p-4 p-md-5">
+          <h2 class="title-orange text-center mb-5 fw-bold">
+            <i class="fas fa-chart-line me-2"></i> Business Reports & Analytics
+          </h2>
 
-        <div class="salesReports">
-          <div class="branchSales">
-            <h5>Sales by Branch</h5>
+          <div class="row g-4 mb-5">
+            <div class="col-lg-6">
+              <div class="card bg-light border-0 shadow-sm h-100">
+                <div class="card-body text-center p-5">
+                  <h4 class="mb-4 text-primary">Sales by Branch</h4>
+                  <p class="text-muted lead mb-0">[Chart will appear here]</p>
+                  <!-- In real implementation: Chart.js / ApexCharts placeholder -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card bg-light border-0 shadow-sm h-100">
+                <div class="card-body text-center p-5">
+                  <h4 class="mb-4 text-primary">Sales by Produce Type</h4>
+                  <p class="text-muted lead mb-0">[Chart will appear here]</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="typeSales">
-            <h5>Sales by Produce Type</h5>
+          <div class="text-center bg-white rounded-4 p-5 shadow">
+            <h4 class="text-muted mb-3">Total Revenue (All Time)</h4>
+            <h1 class="display-4 fw-bold text-success">187,450,000 UGX</h1>
+            <p class="text-muted mt-2">Updated: January 01, 2026</p>
           </div>
         </div>
-
-        <div class="total-revenue-section">
-          <div class="total">
-            <h4>Total Revenue (All Time)</h4>
-            <h2>_</h2>
-          </div>
-        </div>
-      </div>
+      </main>
     </div>
+
+    <!-- Bootstrap Js -->
+    <script src="/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/all.min.js"></script>
   </body>
 </html>

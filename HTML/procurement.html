@@ -1,108 +1,234 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Procurement - Karibu Groceries LTD</title>
-    <!-- Awesome Icons -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+    <!-- Fontawesome Styling -->
     <link rel="stylesheet" href="/CSS/all.min.css" />
-    <!-- CSS Styling -->
+    <!-- External CSS File -->
     <link rel="stylesheet" href="/CSS/procurement.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="card">
-        <h3 class="text-center">
-          <i class="fa-regular fa-truck"></i>
-          Record New Procurement
-        </h3>
-        <!-- Procurement Form -->
-        <form class="procurementForm">
-          <div class="form-text">
-            <label class="form-label">Produce Name</label>
-            <select
-              name="produceName"
-              title="Select produce..."
-              class="form-select"
-              required
-            >
-              <option value="">Select produce...</option>
-              <option>Beans</option>
-              <option>Grain Maize</option>
-              <option>Cow peas</option>
-              <option>G-nuts</option>
-              <option>Soybeans</option>
-            </select>
-          </div>
+    <div class="container-fluid m-0 p-0">
+      <!-- Sidebar -->
+      <aside
+        class="sidebar rounded-top w-sidebar-width bg-white position-fixed h-100 px-3 shadow-sm"
+        id="navbarSupportedContent"
+      >
+        <div class="p-3">
+          <!-- Logo -->
+          <a
+            class="navbar-brand pb-4 d-block text-center mb-1"
+            href="dashboard.html"
+          >
+            <img src="/logo/karibu_logo.svg" alt="Karibu" height="60" />
+          </a>
+          <!-- Navigation Links -->
+          <ul class="nav flex-column gap-1">
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link"
+                ><i class="fas fa-gauge me-2"></i> Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="procurement.html" class="nav-link active"
+                ><i class="fas fa-truck me-2"></i> Procurement</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="cash_sales.html" class="nav-link"
+                ><i class="fas fa-money-bill-wave me-2"></i> Cash Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="credit_sales.html" class="nav-link"
+                ><i class="fas fa-credit-card me-2"></i> Credit Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="stocks.html" class="nav-link"
+                ><i class="fas fa-boxes-stacked me-2"></i> Stock</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="reports.html" class="nav-link"
+                ><i class="fas fa-chart-line me-2"></i> Reports</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="login.html"
+                class="nav-link position-absolute bottom-0 mb-3"
+                ><i class="fas fa-right-from-bracket me-2"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <!--Navbar Toggler -->
+      <nav class="navbar bg-white mb-1 p-3 shadow-sm">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="true"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- Main Content -->
+      <main class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 col-xl-8">
+            <!-- Card Container -->
+            <div class="card-modern p-4 p-md-5">
+              <h2 class="title-orange text-center mb-5 fw-bold">
+                <i class="fas fa-truck me-2"></i> Record New Procurement
+              </h2>
+              <!-- Form -->
+              <form class="row g-4">
+                <div class="col-md-6">
+                  <label class="form-label">Produce Name</label>
+                  <select
+                    id="product-name"
+                    class="form-select form-select-lg"
+                    required
+                    title="Select produce name"
+                  >
+                    <option value="">Select produce...</option>
+                    <option>Beans</option>
+                    <option>Grain Maize</option>
+                    <option>Cow peas</option>
+                    <option>G-nuts</option>
+                    <option>Soybeans</option>
+                  </select>
+                </div>
 
-          <div class="form-number">
-            <label class="form-label">Tonnage (kg)</label>
-            <input
-              type="number"
-              class="form-control"
-              id="tonnage"
-              placeholder="e.g., 500"
-              min="100"
-              required
-            />
-            <p>Minimum 100 kg</p>
-          </div>
+                <div class="col-md-6">
+                  <label class="form-label">Type / Variety</label>
+                  <input
+                    id="produce-type"
+                    type="text"
+                    class="form-control form-control-lg"
+                    required
+                    placeholder="e.g. NABE 15, Longe 10"
+                    title="Enter produce type"
+                  />
+                </div>
 
-          <div class="form-number">
-            <label class="form-label">Total Cost (UGX)</label>
-            <input
-              type="number"
-              class="form-control"
-              id="cost"
-              placeholder="e.g., 150000"
-              min="10000"
-              required
-            />
-          </div>
+                <div class="col-md-6">
+                  <label class="form-label">Date of Purchase</label>
+                  <input
+                    id="date"
+                    type="date"
+                    class="form-control form-control-lg"
+                    required
+                    title="Enter The Date od Purchase"
+                  />
+                </div>
 
-          <div class="form-number">
-            <label class="form-label">Selling Price (UGX/kg)</label>
-            <input
-              type="number"
-              class="form-control"
-              id="sellingPrice"
-              placeholder="e.g., 3000"
-              min="1000"
-              required
-            />
-          </div>
+                <div class="col-md-6">
+                  <label class="form-label">Time</label>
+                  <input
+                    id="time"
+                    type="time"
+                    class="form-control form-control-lg"
+                    title="Select time"
+                    placeholder="HH:MM"
+                  />
+                </div>
 
-          <div class="form-text">
-            <label class="form-label">Dealer/Supplier Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="dealerName"
-              placeholder="e.g., John Doe"
-              minlength="2"
-              required
-            />
-          </div>
+                <div class="col-md-4">
+                  <label class="form-label">Tonnage (kg)</label>
+                  <input
+                    id="tonnage"
+                    type="number"
+                    class="form-control form-control-lg"
+                    min="100"
+                    step="0.5"
+                    required
+                    placeholder="min 100 kg"
+                    title="Enter Tonnage per kg"
+                  />
+                </div>
 
-          <div class="form-text">
-            <label class="form-label">Contact Phone</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="contact"
-              pattern="\+256[0-9]{9}"
-              placeholder="+2567XXXXXXXX"
-              required
-            />
-          </div>
+                <div class="col-md-4">
+                  <label class="form-label">Total Cost (UGX)</label>
+                  <input
+                    id="total-cost"
+                    type="number"
+                    class="form-control form-control-lg"
+                    min="10000"
+                    required
+                    title="Enter total cost in UGX"
+                    placeholder="e.g. 50000"
+                  />
+                </div>
 
-          <div class="button-container">
-            <button type="submit" class="button">
-              <i class="fa-regular fa-circle-check"></i> Submit Procurement
-            </button>
+                <div class="col-md-4">
+                  <label class="form-label">Selling Price (UGX/kg)</label>
+                  <input
+                    id="Selling-price"
+                    type="number"
+                    class="form-control form-control-lg"
+                    min="500"
+                    step="50"
+                    required
+                    title="Enter Selling price per kg in UGX"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Dealer/Supplier Name</label>
+                  <input
+                    id="dealer-name"
+                    type="text"
+                    class="form-control form-control-lg"
+                    required
+                    title="Enter Dealer's Name"
+                    placeholder="e.g Adam Ahmad"
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Contact Phone</label>
+                  <input
+                    id="tel"
+                    type="tel"
+                    class="form-control form-control-lg"
+                    pattern="\+256[0-9]{9}"
+                    required
+                    placeholder="+2567XXXXXXXX"
+                    title="Enter Contact Phone Number"
+                  />
+                </div>
+
+                <div class="col-12 text-center mt-4">
+                  <button
+                    type="submit"
+                    class="btn btn-primary-custom btn-lg px-5 py-3 rounded-pill fw-bold"
+                  >
+                    <i class="fas fa-check-circle me-2"></i> Submit
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </main>
     </div>
+
+    <script src="/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/all.min.js"></script>
   </body>
 </html>

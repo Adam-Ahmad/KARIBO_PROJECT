@@ -1,196 +1,70 @@
-/* ==========================================================================
-  Reset & Base
-   ========================================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Start main Color */
+:root {
+  --primary: #ef5400;
+  --primary-dark: #c94d00;
 }
+/* End main Color */
 
+/* start Body */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: #333;
-  line-height: 1.6;
-  padding-top: 126px; /* for fixed navbar */
+  font-family: "Segoe UI", system-ui, sans-serif;
 }
+/* End Body */
 
-/* ==========================================================================
-   Navbar
-   ========================================================================== */
+/* start Navbar */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #ffe3b5bb;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  z-index: 1000;
-  transition: all 0.3s;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px 10px 10px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
 }
+/* End Navbar */
 
-.logo img {
-  max-height: 100px;
-  width: auto;
-}
-
-/* ==========================================================================
-  Buttons
-   ========================================================================== */
-.button {
-  display: inline-block;
-  padding: 10px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  background-color: #9c640f;
-  color: white;
-  font-size: 28px;
-}
-
-.button:hover {
-  background-color: #fe5400;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(254, 84, 0, 0.25);
-}
-
-/* ==========================================================================
-  Hero
-   ========================================================================== */
+/* Start Hero */
 .hero {
-  background: url("/Images/Beans_in_bags.jpg") center/cover no-repeat;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: green;
-  justify-content: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
+    url("/Images/Beans_in_bags.jpg") center/cover no-repeat;
+  min-height: 90vh;
 }
+/* End Hero */
 
-.hero-container {
-  /* max-width: 800px; */
-  justify-content: center;
-  justify-items: center;
+/* start Button */
+.btn-primary-custom {
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
-
-.hero h1 {
-  font-size: 80px;
-  margin-bottom: 1.2rem;
-  color: #fe5400;
-  line-height: 1.1;
+.btn-primary-custom:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
 }
+/* End Button */
 
-.hero p {
-  font-size: 40px;
-  font-weight: 600;
-  margin-bottom: 40px;
-  opacity: 0.95;
-}
-
-/* ==========================================================================
-  Features Section
-   ========================================================================== */
-.features-section {
-  padding: 6rem 0;
-  background: white;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-header h2 {
-  font-size: clamp(2.2rem, 5vw, 3rem);
-  color: #fe5400;
-  margin-bottom: 1rem;
-}
-
-.section-header p {
-  color: #9c640f;
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 0 20px;
-  justify-content: center;
-  justify-items: center;
-}
-
+/* Start Feature */
 .feature-card {
-  background: white;
+  transition: all 0.35s ease;
+  border: none;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .feature-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(254, 84, 0, 0.15);
-}
-
-.feature-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
 }
 
 .feature-card h3 {
-  color: #fe5400;
-  padding: 1.5rem 1.5rem 0.5rem;
-  font-size: 1.5rem;
+  color: var(--primary);
 }
 
+.feature-head {
+  color: var(--primary);
+}
+.feature-icon {
+  font-size: 40px;
+  color: var(--primary);
+}
 .feature-card p {
-  padding: 0 1.5rem 1.8rem;
-  color: #555;
+  font-size: 20px;
 }
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-.footer {
-  background: #222;
-  color: white;
-  padding: 3rem 0;
-  text-align: center;
-}
-
-.footer p {
-  margin: 0;
-  opacity: 0.8;
-}
-
-/* ==========================================================================
-   Responsive Adjustments
-   ========================================================================== */
-@media (max-width: 576px) {
-  .nav-container {
-    padding: 1rem;
-  }
-
-  .hero {
-    padding: 6rem 1rem;
-  }
-
-  .features-section {
-    padding: 4rem 0;
-  }
-}
-@media (min-width: 768px) {
-  .features-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+/* End Feature */

@@ -1,27 +1,75 @@
-// Users database
-const Users = [
-  { username: 'Adam', password: '123', role: 'director' },
-  { username: 'Ahmad', password: '123', role: 'manager' },
-  { username: 'omer', password: '123', role: 'sales_agent' },
-];
+let loginBtn = document.querySelector("#loginBtn");
+let usernameElement = document.querySelector("#username");
+let passwordElement = document.querySelector("#password");
 
-// Login form submission
-document.getElementById('loginForm').addEventListener('submit', function (e) {
+function showToast(message, type = "success") {
+  const container = document.getElementById("toastContainer");
+  const toast = document.createElement("div");
+  toast.className = `toast ${type}`;
+  const icon = type === "success" ? "✓" : "✕";
+  toast.innerHTML = `
+        <span class="toast-icon">${icon}</span>
+        <span>${message}</span>
+      `;
+  container.appendChild(toast);
+
+  setTimeout(() => toast.classList.add("show"), 100);
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 400);
+  }, 3000);
+}
+
+document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
+  let username = usernameElement.value;
+  let password = passwordElement.value;
 
-  // form values
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  const user = Users.find(
-    (u) => u.username === username && u.password === password
+  if (!username || !password) {
+    showToast("Please Enter Username and Password.", "error");
+    return;
+  }
+  const users = [
+    { username: "adam", password: "1234", role: "admin" },
+    { username: "orban", password: "1234", role: "director" },
+    { username: "ahmad", password: "1234", role: "sales agent" },
+  ];
+
+  const user = users.find(
+    (u) => u.username === username && u.password === password,
   );
 
-  // login result
   if (user) {
-    localStorage.setItem('currentUser', JSON.stringify(user));
-    alert(`Welcome, ${user.role}! Redirecting to dashboard...`);
-    window.location.href = 'dashboard.html';
+    showToast(`Login Successfuly! Welcome ${user.role} ${user.username}`);
+
+    if (user.role === "admin") {
+      setTimeout(() => {
+        window.location.href = "/HTML/dashboard.html";
+      }, 1200);
+    }
+    if (user.role === "director") {
+      setTimeout(() => {
+        window.location.href = "/HTML/dashboard.html";
+      }, 1200);
+    }
+    if (user.role === "sales agent") {
+      setTimeout(() => {
+        window.location.href = "/HTML/dashboard.html";
+      }, 1200);
+    }
+
+    let userDetails = {
+      username: user.username,
+      firstName: "Adam",
+      lastName: "Ahmad",
+      role: user.role,
+    };
+
+    localStorage.setItem("userDetails", JSON.stringify(userDetails));
+    setTimeout(() => {
+      window.location.href = "/HTML/dashboard.html";
+    }, 1200);
   } else {
-    alert('Invalid username or password. Try: Adam / 123');
+    showToast("Invalid Username or Password. Pleas Try Again.", "error");
   }
 });

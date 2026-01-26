@@ -1,98 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Karibu Groceries LTD - Wholesale Produce Management</title>
-
-    <!-- Stylesheet -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+    <!-- Fontawesome Styling -->
+    <link rel="stylesheet" href="/CSS/all.min.css" />
+    <!-- External CSS File -->
     <link rel="stylesheet" href="/CSS/index.css" />
   </head>
-
   <body>
-    <!-- Navigation -->
-    <div class="container">
-      <nav class="navbar">
-        <div class="logo">
-          <a>
-            <img
-              src="/logo/karibu_logo.svg"
-              alt="Karibu Groceries LTD"
-              width=""
-              height=""
-            />
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm p-0">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="/logo/karibu_logo.svg" alt="Karibu" height="60" />
+        </a>
+        <div class="ms-auto">
+          <a
+            href="login.html"
+            class="btn btn-primary-custom rounded-pill px-4 py-2 fw-bold"
+          >
+            Login
           </a>
         </div>
-        <div class="nav-links">
-          <a href="login.html" class="button">Login</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero d-flex align-items-center text-white">
+      <div class="container text-center">
+        <h1 class="display-3 fw-bold mb-4">Karibu Groceries LTD</h1>
+        <p class="lead fs-3 fw-light mb-5">
+          Modern Digital Solution for Wholesale Produce Management
+        </p>
+        <a
+          href="login.html"
+          class="btn btn-primary-custom btn-lg px-5 py-3 rounded-pill fw-bold"
+        >
+          Get Started →
+        </a>
+      </div>
+    </section>
+
+    <!-- Feature Section -->
+
+    <section class="py-5 py-lg-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="feature-head display-5 fw-bold">Our Features</h2>
+          <p class="lead text-muted">
+            Powerful tools designed for your wholesale business
+          </p>
         </div>
-      </nav>
 
-      <!-- Hero -->
-      <section class="hero">
-        <div class="hero-container">
-          <h1>Welcome to Karibu Groceries LTD</h1>
-          <p>Modern Digital Solution for Wholesale Produce Management</p>
-          <a href="login.html" class="button">Get Started</a>
-        </div>
-      </section>
-
-      <!-- Features -->
-      <section class="features-section">
-        <div class="container">
-          <div class="section-header">
-            <h2>Our Features</h2>
-            <p>
-              Discover the benefits of using Karibu Groceries LTD for your
-              wholesale produce management
-            </p>
-          </div>
-
-          <div class="features-grid">
-            <div class="feature-card">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="feature-card bg-white text-center p-4 h-100">
+              <i class="fas fa-boxes-stacked feature-icon"></i>
+              <h3 class="h4 fw-bold">Efficient Inventory</h3>
               <img
-                src="/Images/Efficient Inventory Management.jpg"
+                src="/Images/Efficient-Inventory-Management.jpg"
                 alt="Efficient Inventory Management"
+                class="img-fluid my-3 rounded-4"
               />
-              <h3>Efficient Inventory Management</h3>
-              <p>
-                Streamline your inventory tracking with our user-friendly
-                system.
-              </p>
-            </div>
-
-            <div class="feature-card">
-              <img
-                src="/Images/Real-time Order Processing.jpg"
-                alt="Real-time Order Processing"
-              />
-              <h3>Real-time Order Processing</h3>
-              <p>
-                Process orders quickly and accurately with real-time updates.
-              </p>
-            </div>
-
-            <div class="feature-card">
-              <img
-                src="/Images/Comprehensive Reporting.jpg"
-                alt="Comprehensive Reporting"
-              />
-              <h3>Comprehensive Reporting</h3>
-              <p>
-                Gain insights into your business with detailed reports and
-                analytics.
+              <p class="text-muted">
+                Real-time stock tracking with smart low-stock alerts
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="container">
-          <p>© 2026 Karibu Groceries LTD. All rights reserved.</p>
+          <div class="col-lg-4">
+            <div class="feature-card bg-white text-center p-4 h-100">
+              <i class="fas fa-truck-fast feature-icon"></i>
+              <h3 class="h4 fw-bold">Fast Order Processing</h3>
+              <img
+                src="/Images/Real-time-Order-Processing.jpg"
+                alt="Fast Order Processing"
+                class="img-fluid my-3 rounded-4"
+              />
+              <p class="text-muted">Cash & Credit sales with instant updates</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="feature-card bg-white text-center p-4 h-100">
+              <i class="fas fa-chart-line feature-icon"></i>
+              <h3 class="h4 fw-bold">Powerful Analytics</h3>
+              <img
+                src="/Images/Comprehensive-Reporting.jpg"
+                alt="Powerful Analytics"
+                class="img-fluid my-3 rounded-4"
+              />
+              <p class="text-muted">Clear reports & business insights</p>
+            </div>
+          </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+
+    <footer class="py-5 text-center bg-dark text-white">
+      <div class="container">
+        <p class="mb-0">
+          &copy; 2026 Karibu Groceries LTD. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS-->
+
+    <script src="/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/all.min.js"></script>
   </body>
 </html>

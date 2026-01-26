@@ -4,20 +4,20 @@
 
   <!-- Orange Arrow Icon (stylized K) -->
   <g transform="translate(20, 20)">
-    <path d="M0,0 L60,0 L80,40 L60,80 L0,80 L40,40 Z" fill="#fe5900"/>
+    <path d="M0,0 L60,0 L80,40 L60,80 L0,80 L40,40 Z" fill="#ef5400"/>
     <path d="M40,0 L80,40 L40,80" fill="#ffffff" opacity="0.4"/>
   </g>
 
   <!-- Vertical Divider Line -->
-  <line x1="120" y1="20" x2="120" y2="100" stroke="#fe5900" stroke-width="4"/>
+  <line x1="120" y1="20" x2="120" y2="100" stroke="#ef5400" stroke-width="4"/>
 
   <!-- Text: KARIBU -->
-  <text x="140" y="65" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="bold" fill="#8B4513">
+  <text x="140" y="65" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="bold" fill="#0f0f0f">
     KARIBU
   </text>
 
   <!-- Text: GROCERIES LTD -->
-  <text x="140" y="95" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" fill="#A0522D">
+  <text x="140" y="95" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" fill="#0f0f0f">
     GROCERIES LTD
   </text>
 </svg>

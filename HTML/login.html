@@ -1,64 +1,83 @@
-<!-- login.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Karibu Groceries LTD</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+    <!-- Fontawesome Styling -->
+    <link rel="stylesheet" href="/CSS/all.min.css" />
+    <!-- External CSS File -->
     <link rel="stylesheet" href="/CSS/login.css" />
+    <style></style>
   </head>
   <body>
-    <div class="login-container">
-      <div class="login-card">
-        <img
-          src="/logo/karibu_logo.svg"
-          alt="Karibu Groceries LTD"
-          class="logo-img"
-        />
+    <!-- Login Container -->
 
-        <h2 class="welcome-text">Welcome Back</h2>
-        <p class="subtitle">Sign in to continue</p>
-
-        <form id="loginForm" class="login-form">
-          <div class="form-group">
-            <input
-              type="text"
-              id="username"
-              placeholder="Username"
-              required
-              autofocus
+    <div class="login-container container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-5">
+          <div class="card-modern p-4 p-md-5 text-center rounded-5 bg-white">
+            <img
+              src="/logo/karibu_logo.svg"
+              alt="Karibu Groceries"
+              class="mb-4 karibu-logo"
             />
+
+            <h2 class="title mb-2 fw-bold">Welcome Back</h2>
+            <p class="text-muted mb-4">
+              Sign in to manage your wholesale business
+            </p>
+
+            <form id="loginForm">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control form-control-lg rounded-pill"
+                  id="username"
+                  placeholder="Username"
+                  autofocus
+                />
+              </div>
+
+              <div class="mb-4">
+                <input
+                  type="password"
+                  class="form-control form-control-lg rounded-pill"
+                  id="password"
+                  placeholder="Password"
+                />
+              </div>
+              <p class="text-danger" id="demo"></p>
+
+              <button
+                id="loginBtn"
+                type="submit"
+                class="btn btn-primary-custom btn-lg w-100 rounded-pill py-3 fw-bold"
+              >
+                Login <i class="fas fa-arrow-right ms-2"></i>
+              </button>
+            </form>
+
+            <div class="mt-4">
+              <a href="index.html" class="text-muted text-decoration-none">
+                ← Back to Home
+              </a>
+            </div>
           </div>
-
-          <div class="form-group">
-            <input
-              type="password"
-              id="password"
-              placeholder="Password"
-              required
-            />
-          </div>
-
-          <button type="submit" class="login-button">Login</button>
-
-          <div class="error-message" id="errorMsg"></div>
-        </form>
-
-        <div class="login-footer">
-          <a href="index.html">← Back to Home</a>
         </div>
       </div>
     </div>
 
-    <!-- Optional: simple client-side error display -->
-    <script>
-      document.getElementById("loginForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const errorEl = document.getElementById("errorMsg");
-        errorEl.textContent = "";
-        errorEl.classList.remove("show");
-        // Add your real login logic here
-      });
-    </script>
+    <!-- Toast container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- External Js -->
+    <script src="/Js/login.js"></script>
+    <script src="/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/all.min.js"></script>
   </body>
 </html>

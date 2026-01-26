@@ -8,13 +8,11 @@ The system replaces manual record-keeping in ruled books with a secure, role-bas
 ## Features
 
 - Role-Based Access Control:
-
   - Director: Views only aggregated reports and totals across both branches.
   - Manager: Records procurement, sets selling prices, views and records sales, manages inventory.
   - Sales Agent: Records cash sales and credit sales at their branch only.
 
 - Core Functionalities:
-
   - Procurement recording with dealer details and stock addition.
   - Cash sales with automatic stock deduction and price pre-population.
   - Credit/deferred sales with buyer verification (National ID, due date).
@@ -54,6 +52,6 @@ kgl-app/
 │ ├── procurement.html
 │ ├── sales.html
 │ ├── credit.html
-│ ├── inventory.html
+│ ├── stocks.html
 │ └── reports.html
 └── README.md
