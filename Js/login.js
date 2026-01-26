@@ -1,7 +1,9 @@
+// define variables
 let loginBtn = document.querySelector("#loginBtn");
 let usernameElement = document.querySelector("#username");
 let passwordElement = document.querySelector("#password");
 
+// toast function
 function showToast(message, type = "success") {
   const container = document.getElementById("toastContainer");
   const toast = document.createElement("div");
@@ -20,6 +22,7 @@ function showToast(message, type = "success") {
   }, 3000);
 }
 
+// login form event
 document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
   let username = usernameElement.value;
@@ -38,10 +41,9 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const user = users.find(
     (u) => u.username === username && u.password === password,
   );
-
+  // validate user
   if (user) {
     showToast(`Login Successfuly! Welcome ${user.role} ${user.username}`);
-
     if (user.role === "admin") {
       setTimeout(() => {
         window.location.href = "/HTML/dashboard.html";
@@ -58,6 +60,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
       }, 1200);
     }
 
+    // store user detail in local storage
     let userDetails = {
       username: user.username,
       firstName: "Adam",

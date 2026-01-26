@@ -80,11 +80,11 @@ body {
 }
 
 .toast.success {
-  background: #48bb78;
+  background: var(--success);
 }
 
 .toast.error {
-  background: #f56565;
+  background: var(--danger);
 }
 
 .toast-icon {

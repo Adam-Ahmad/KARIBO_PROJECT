@@ -1,104 +1,133 @@
-<!-- dashboard.html -->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard - Karibu Groceries LTD</title>
-
-    <!-- Awesome Icons -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+    <!-- Fontawesome Styling -->
     <link rel="stylesheet" href="/CSS/all.min.css" />
-    <!-- CSS Styling -->
-
-    <link rel="stylesheet" href="/CSS/dashbord.css" />
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="/CSS/dashboard.css" />
   </head>
   <body>
-    <div class="sidebar">
-      <!-- Sidebar logo -->
+    <div class="container-fluid m-0 p-0">
+      <!-- Sidebar -->
+      <aside
+        class="sidebar rounded-top w-sidebar-width bg-white position-fixed h-100 px-3 shadow-sm"
+        id="navbarSupportedContent"
+      >
+        <div class="p-3">
+          <!-- Logo -->
+          <a
+            class="navbar-brand pb-4 d-block text-center mb-1"
+            href="dashboard.html"
+          >
+            <img src="/logo/karibu_logo.svg" alt="Karibu" height="60" />
+          </a>
+          <!-- Navigation Links -->
+          <ul class="nav flex-column gap-1">
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link active"
+                ><i class="fas fa-gauge me-2"></i> Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="procurement.html" class="nav-link"
+                ><i class="fas fa-truck me-2"></i> Procurement</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="cash_sales.html" class="nav-link"
+                ><i class="fas fa-money-bill-wave me-2"></i> Cash Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="credit_sales.html" class="nav-link"
+                ><i class="fas fa-credit-card me-2"></i> Credit Sales</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="stocks.html" class="nav-link"
+                ><i class="fas fa-boxes-stacked me-2"></i> Stock</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="reports.html" class="nav-link"
+                ><i class="fas fa-chart-line me-2"></i> Reports</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="login.html"
+                class="nav-link position-absolute bottom-0 mb-3"
+                ><i class="fas fa-right-from-bracket me-2"></i> Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <!--Navbar Toggler -->
+      <nav class="navbar bg-white mb-1 p-3 shadow-sm">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="true"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- user information -->
+          <div class="user-info" id="userInfo"></div>
+        </div>
+      </nav>
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Main Heading -->
+        <div class="main-heading">
+          <h1 class="mb-5 fw-bold">Dashboard</h1>
+        </div>
+        <!-- Main Cards -->
+        <div class="row g-4 mb-5">
+          <div class="col-xl-4 col-md-8">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5>Total Stock (kg)</h5>
+                <h2>—</h2>
+              </div>
+            </div>
+          </div>
 
-      <a class="logo">
-        <img
-          src="/logo/karibu_logo.svg"
-          alt="Karibu Groceries LTD"
-          width="200"
-          height="70"
-        />
-      </a>
+          <div class="col-xl-4 col-md-8">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5>Today's Sales (UGX)</h5>
+                <h2>—</h2>
+              </div>
+            </div>
+          </div>
 
-      <!-- sidebar Navigation Links -->
-
-      <ul class="nav-links">
-        <li>
-          <a href="dashboard.html" class="nav-link"
-            ><i class="fa-solid fa-gauge"></i> Dashboard</a
-          >
-        </li>
-        <li>
-          <a href="procurement.html" class="nav-link"
-            ><i class="fa-solid fa-truck"></i> Procurement</a
-          >
-        </li>
-        <li class="agent-manager">
-          <a href="cash_sales.html" class="nav-link"
-            ><i class="fa-solid fa-money-bill-wave"></i> Cash Sales</a
-          >
-        </li>
-        <li class="agent-manager">
-          <a href="credit_sales.html" class="nav-link">
-            <i class="fa-solid fa-credit-card"></i> Credit Sales</a
-          >
-        </li>
-        <li>
-          <a href="inventory.html" class="nav-link"
-            ><i class="fa-solid fa-boxes-stacked"></i> Inventory</a
-          >
-        </li>
-        <li class="director-only">
-          <a href="reports.html" class="nav-link"
-            ><i class="fa-solid fa-chart-line"></i> Reports</a
-          >
-        </li>
-        <li class="logout">
-          <a href="login.html"
-            ><i class="fa-solid fa-right-from-bracket"></i>Logout</a
-          >
-        </li>
-      </ul>
+          <div class="col-xl-4 col-md-8">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5>Low Stock Items</h5>
+                <h2>—</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-
-    <div class="main-content">
-      <!-- The Heading -->
-      <div class="heading">
-        <h1>Dashboard</h1>
-        <div class="date">2026<i class="fa-solid fa-calendar"></i></div>
-      </div>
-      <!-- Details Cards -->
-
-      <div class="cards">
-        <div class="card-body">
-          <h5>Total Stock (kg)</h5>
-          <h2>—</h2>
-        </div>
-        <div class="card-body">
-          <h5>Today's Sales (UGX)</h5>
-          <h2>—</h2>
-        </div>
-        <div class="card-body">
-          <h5>Low Stock Items</h5>
-          <h2>—</h2>
-        </div>
-      </div>
-
-      <!-- Role messages -->
-      <!-- <div class="massages">
-        <div class="massage">
-          Director: View detailed analytics in the Reports section.
-        </div>
-        <div class="massage">
-          Manager: Record new procurement to update inventory.
-        </div>
-        <div class="massage">Agent: Record sales from your branch.</div>
-      </div> -->
-    </div>
+    <script src="/Js/dashboard.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/all.min.js"></script>
   </body>
 </html>
