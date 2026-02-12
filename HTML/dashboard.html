@@ -85,7 +85,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <!-- user information -->
-          <div class="user-info" id="userInfo"></div>
+          <div
+            class="uInfo p-1 d-flex text-center align-items-center justify-content-end rounded-3"
+          >
+            <div class="user-info p-3 m-0" id="userInfo"></div>
+            <div class="badge p-3 m-0" id="userRole"></div>
+          </div>
         </div>
       </nav>
       <!-- Main Content -->
@@ -99,8 +104,8 @@
           <div class="col-xl-4 col-md-8">
             <div class="card h-100">
               <div class="card-body">
-                <h5>Total Stock (kg)</h5>
-                <h2>—</h2>
+                <h5>Total Cash Sales (UGX)</h5>
+                <h2 id="totalCashSales">—</h2>
               </div>
             </div>
           </div>
@@ -108,8 +113,8 @@
           <div class="col-xl-4 col-md-8">
             <div class="card h-100">
               <div class="card-body">
-                <h5>Today's Sales (UGX)</h5>
-                <h2>—</h2>
+                <h5>Total Credit Sales (UGX)</h5>
+                <h2 id="totalCreditSales">—</h2>
               </div>
             </div>
           </div>
@@ -117,11 +122,30 @@
           <div class="col-xl-4 col-md-8">
             <div class="card h-100">
               <div class="card-body">
-                <h5>Low Stock Items</h5>
-                <h2>—</h2>
+                <h5>Pending Sales (UGX)</h5>
+                <h2 id="pendingSales">—</h2>
               </div>
             </div>
           </div>
+        </div>
+        <div class="card card-modern p-2 p-md-5">
+          <h5 class="p-2">Recently Added Sales</h5>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Buyer Name</th>
+                <th scope="col">Product</th>
+                <th scope="col">Tonnage Sold</th>
+                <th scope="col">Amount Paid</th>
+                <th scope="col">Time</th>
+                <th scope="col">Balance</th>
+                <th scope="col">DueDate</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody id="dataTable"></tbody>
+          </table>
         </div>
       </main>
     </div>

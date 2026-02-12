@@ -97,7 +97,7 @@
                 <i class="fas fa-money-bill-wave me-2"></i> Record Cash Sale
               </h2>
               <!-- Form -->
-              <form class="row g-4">
+              <form class="row g-4" id="salesForm">
                 <div class="col-md-6">
                   <label class="form-label">Select Product</label>
                   <select
@@ -116,24 +116,22 @@
                 </div>
 
                 <div class="col-md-3">
-                  <label class="form-label">Available Stock</label>
+                  <label class="form-label">Date & Time</label>
                   <input
-                    title="Available Stock"
-                    type="number"
+                    title="Time"
+                    type="datetime-local"
                     class="form-control form-control-lg"
-                    id="available"
-                    placeholder="kg"
+                    id="time"
                   />
                 </div>
 
                 <div class="col-md-3">
-                  <label class="form-label">Current Price</label>
+                  <label class="form-label">Due Date</label>
                   <input
-                    title="Current price"
-                    type="number"
+                    title="Due Date"
+                    type="date"
                     class="form-control form-control-lg"
-                    id="price"
-                    placeholder="UGX/kg"
+                    id="dueDate"
                   />
                 </div>
 
@@ -190,7 +188,40 @@
         </div>
       </main>
     </div>
+    <script>
+      let form = document.querySelector("#salesForm");
+      let produceElement = document.querySelector("#produce");
+      let timeElement = document.querySelector("#time");
+      let dueDateElement = document.querySelector("#dueDate");
+      let tonnageSoldElement = document.querySelector("#tonnage-sold");
+      let amountPaidElement = document.querySelector("#amount-paid");
+      let buyerNameElement = document.querySelector("#buyer-name");
 
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let formValues = {
+          product: produceElement.value,
+          time: timeElement.value,
+          dueDate: dueDateElement.value,
+          tonnageSold: tonnageSoldElement.value,
+          amountPaid: amountPaidElement.value,
+          buyerName: buyerNameElement.value,
+        };
+
+        let transactions = JSON.parse(
+          localStorage.getItem("transactions") || "[]",
+        );
+
+        transactions.push(formValues);
+
+        localStorage.setItem("transactions", JSON.stringify(transactions));
+        alert("Cash Sale Recorded Successfully");
+
+        form.reset();
+        window.location.href = "/HTML/dashboard.html";
+      });
+    </script>
+    <!-- Bootstrap js -->
     <script src="/Js/bootstrap.bundle.min.js"></script>
     <script src="/Js/all.min.js"></script>
   </body>
