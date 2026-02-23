@@ -1,102 +1,34 @@
-/* main Colors */
 :root {
-  --primary: #ef5400;
+  --primary: #ff762d;
   --primary-dark: #c94d00;
-  --success: #27ae60;
-  --danger: #c0392b;
-  --dark: #2c3e50;
-  --light: #f8f9fa;
-  --gray: #6c757d;
 }
-/* body */
 body {
-  background: var(--light);
-  min-height: 100vh;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-  color: var(--dark);
+  background-color: #f8f9fa;
 }
-
-/* sidebar */
-.sidebar {
-  transition: transform 0.3s ease;
-  z-index: 1000;
+.sidebar-width {
+  width: 280px;
+}
+@media (min-width: 992px) {
+  .main-content-wrapper {
+    margin-left: 280px;
+  }
 }
 .nav-link {
-  color: var(--text-muted);
-  border-radius: 12px;
-  margin: 0.35rem 0.75rem;
-  padding: 0.75rem 1.25rem;
+  color: #495057;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
   transition: all 0.2s;
+  font-weight: 500;
 }
-
 .nav-link:hover,
 .nav-link.active {
-  background: #f1f5f9;
+  background-color: #fff5eb;
   color: var(--primary);
-  font-weight: 600;
 }
-
-/* card container */
-.card-modern {
-  background: rgba(255, 255, 255, 0.97);
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.14);
-  overflow: hidden;
+.nav-link.active {
+  font-weight: 700;
 }
 
 .title-orange {
   color: var(--primary);
-  font-weight: 700;
-}
-
-.btn-primary-custom {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  font-weight: 600;
-}
-
-.btn-primary-custom:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
-}
-
-/* table */
-.table thead th {
-  background-color: #f1f5f9;
-  color: var(--dark);
-  font-weight: 600;
-}
-
-.status-normal {
-  color: var(--success);
-  font-weight: 600;
-}
-.status-low {
-  color: #f39c12;
-  font-weight: 600;
-}
-.status-critical {
-  color: var(--danger);
-  font-weight: 600;
-}
-
-/* responsiveness */
-@media (max-width: 992px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-  .main-content {
-    margin-left: 0;
-    padding: 1.25rem;
-  }
-  .sidebar.show {
-    transform: translateX(0);
-  }
 }

@@ -8,72 +8,106 @@
     <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
     <!-- Bootstrap Styling -->
     <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Fontawesome Styling -->
     <link rel="stylesheet" href="/CSS/all.min.css" />
     <!-- External CSS File -->
     <link rel="stylesheet" href="/CSS/login.css" />
-    <style></style>
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .form-floating > .form-control:focus,
+      .form-floating > .form-control:not(:placeholder-shown) {
+        padding-top: 1.625rem;
+        padding-bottom: 0.625rem;
+      }
+    </style>
   </head>
-  <body>
+  <body
+    class="bg-agriculture-overlay d-flex align-items-center min-vh-100 py-5"
+  >
     <!-- Login Container -->
 
-    <div class="login-container container mt-5">
+    <div class="login-container container">
       <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-5">
-          <div class="card-modern p-4 p-md-5 text-center rounded-5 bg-white">
-            <img
-              src="/logo/karibu_logo.svg"
-              alt="Karibu Groceries"
-              class="mb-4 karibu-logo"
-            />
+        <div class="col-12 col-md-8 col-lg-5 col-xl-4">
+          <div
+            class="card-modern p-4 p-md-5 text-center rounded-5 bg-white shadow-lg border-0"
+          >
+            <a href="index.html" class="text-decoration-none">
+              <img
+                src="/logo/karibu_logo.svg"
+                alt="Karibu Groceries"
+                class="mb-4 karibu-logo img-fluid"
+                style="max-height: 80px"
+              />
+            </a>
 
-            <h2 class="title mb-2 fw-bold">Welcome Back</h2>
+            <h2 class="title mb-2 fw-bold text-dark">Welcome Back</h2>
             <p class="text-muted mb-4">
               Sign in to manage your wholesale business
             </p>
 
             <form id="loginForm">
-              <div class="mb-3">
+              <div class="form-floating mb-3">
                 <input
                   type="text"
-                  class="form-control form-control-lg rounded-pill"
+                  class="form-control rounded-4"
                   id="username"
                   placeholder="Username"
                   autofocus
                 />
+                <label for="username">Username</label>
               </div>
 
-              <div class="mb-4">
+              <div class="form-floating mb-4">
                 <input
                   type="password"
-                  class="form-control form-control-lg rounded-pill"
+                  class="form-control rounded-4"
                   id="password"
                   placeholder="Password"
                 />
+                <label for="password">Password</label>
               </div>
-              <p class="text-danger" id="demo"></p>
+              <p class="text-danger small fw-bold" id="demo"></p>
 
               <button
                 id="loginBtn"
                 type="submit"
-                class="btn btn-primary-custom btn-lg w-100 rounded-pill py-3 fw-bold"
+                class="btn btn-primary-custom btn-lg w-100 rounded-pill py-3 fw-bold shadow-sm"
               >
                 Login <i class="fas fa-arrow-right ms-2"></i>
               </button>
             </form>
 
             <div class="mt-4">
-              <a href="index.html" class="text-muted text-decoration-none">
-                ← Back to Home
+              <a
+                href="index.html"
+                class="text-muted text-decoration-none fw-medium"
+              >
+                <i class="fas fa-arrow-left me-1"></i> Back to Home
               </a>
             </div>
+          </div>
+          <div class="text-center mt-4 text-white-50 small">
+            &copy; 2026 Karibu Groceries LTD.
           </div>
         </div>
       </div>
     </div>
 
     <!-- Toast container -->
-    <div class="toast-container" id="toastContainer"></div>
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      id="toastContainer"
+    ></div>
 
     <!-- External Js -->
     <script src="/Js/login.js"></script>

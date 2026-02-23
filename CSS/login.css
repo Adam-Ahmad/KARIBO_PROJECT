@@ -1,6 +1,6 @@
 /* start main Color */
 :root {
-  --primary: #ef5400;
+  --primary: #ff762d;
   --primary-dark: #c94d00;
   --success: #27ae60;
   --danger: #c0392b;
@@ -12,15 +12,15 @@
 
 /* start Body */
 body {
-  background: var(--light);
   min-height: 100vh;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  font-family: "Inter", sans-serif;
+}
+.bg-agriculture-overlay {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url(https://lh3.googleusercontent.com/aida-public/AB6AXuD4Uw09EaMTr-kV1IT1krtOrqdyAL62lWRrIyvEYEF3lczX_6894y7TVkCivwydN2DWSSlLmXMKqXFTz8vVo1yb_uByyPbbEDTgPwD9qq94Kd56bq2bVVqMfKT7cIF9gX2jefaFyDKk6IjmK3iB6A7C7UCBXyNqdJjgLjraSDnOBKcq2hoaDGXvD1GoCOgdUdQn91uLHZkxy7GQLuAP5JMQRKPmDyZ9oY0iByoQhgs-xdgE_M34nCWsrkjMI6RDsCR17ZCpnDMduvAa);
+  background-size: cover;
+  background-position: center;
 }
 /* End Body */
 

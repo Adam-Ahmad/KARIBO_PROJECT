@@ -4,12 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Karibu Groceries LTD - Wholesale Produce Management</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Bootstrap Styling -->
     <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+
     <!-- Fontawesome Styling -->
     <link rel="stylesheet" href="/CSS/all.min.css" />
+
     <!-- External CSS File -->
     <link rel="stylesheet" href="/CSS/index.css" />
   </head>
@@ -19,7 +31,12 @@
     <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm p-0">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="/logo/karibu_logo.svg" alt="Karibu" height="60" />
+          <img
+            src="/logo/karibu_logo.svg"
+            alt="Karibu"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
         </a>
         <div class="ms-auto">
           <a
@@ -34,8 +51,8 @@
 
     <!-- Hero Section -->
 
-    <section class="hero d-flex align-items-center text-white">
-      <div class="container text-center">
+    <section class="hero d-flex align-items-center text-white min-vh-100 pt-5">
+      <div class="container text-center px-4">
         <h1 class="display-3 fw-bold mb-4">Karibu Groceries LTD</h1>
         <p class="lead fs-3 fw-light mb-5">
           Modern Digital Solution for Wholesale Produce Management
@@ -61,7 +78,7 @@
         </div>
 
         <div class="row g-4">
-          <div class="col-lg-4">
+          <div class="col-md-6 col-lg-4">
             <div class="feature-card bg-white text-center p-4 h-100">
               <i class="fas fa-boxes-stacked feature-icon"></i>
               <h3 class="h4 fw-bold">Efficient Inventory</h3>
@@ -76,7 +93,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-md-6 col-lg-4">
             <div class="feature-card bg-white text-center p-4 h-100">
               <i class="fas fa-truck-fast feature-icon"></i>
               <h3 class="h4 fw-bold">Fast Order Processing</h3>
@@ -88,7 +105,7 @@
               <p class="text-muted">Cash & Credit sales with instant updates</p>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-md-6 col-lg-4">
             <div class="feature-card bg-white text-center p-4 h-100">
               <i class="fas fa-chart-line feature-icon"></i>
               <h3 class="h4 fw-bold">Powerful Analytics</h3>
@@ -106,8 +123,52 @@
 
     <!-- Footer Section -->
 
-    <footer class="py-5 text-center bg-dark text-white">
+    <footer class="py-5 bg-dark text-white">
       <div class="container">
+        <div class="row text-center text-md-start align-items-center">
+          <!-- About  -->
+          <div class="col-md-6 mb-4 mb-md-0">
+            <a href="index.html" class="d-block mb-3">
+              <img
+                src="/logo/karibu_logo.svg"
+                alt="Karibu"
+                height="50"
+                style="filter: brightness(0) invert(1)"
+              />
+            </a>
+            <p class="text-white-50">
+              Karibu Groceries LTD is Modern Digital Solution for Wholesale
+              Produce Management System.
+            </p>
+            <!-- About Icons  -->
+            <div
+              class="about-icons d-flex justify-content-center justify-content-md-start gap-3"
+            >
+              <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+              <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="#"><i class="fab fa-instagram fa-lg text-danger"></i></a>
+              <a href="#"><i class="fab fa-whatsapp fa-lg text-success"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <h4 class="fw-bold mb-3">Get in touch</h4>
+            <ul class="list-unstyled text-white-50">
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> +256 (0) 777335250
+              </li>
+              <li class="mb-2">
+                <i class="fab fa-whatsapp me-2"></i> +256 (0) 777745734
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> karibu@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container mt-4 pt-4 border-top border-secondary text-center text-white-50"
+      >
         <p class="mb-0">
           &copy; 2026 Karibu Groceries LTD. All rights reserved.
         </p>

@@ -24,7 +24,6 @@ let totalCashSalesElement = document.getElementById("totalCashSales");
 let totalCreditSalesElement = document.getElementById("totalCreditSales");
 let pendingSalesElement = document.getElementById("pendingSales");
 let dataTableElement = document.querySelector("#dataTable");
-
 let transactions = localStorage.getItem("transactions");
 
 if (!transactions) {
@@ -34,16 +33,13 @@ if (!transactions) {
 transactions = JSON.parse(transactions);
 
 let saleRef = {
-  id: "",
   buyerName: "",
   product: "",
   tonnageSold: "",
   amountPaid: "",
   isCredit: false,
   date: new Date(),
-  balance: 0,
   dueDate: new Date(),
-  status: "",
 };
 
 let totalCashSales = transactions.filter((t) => isCredit === false).length || 0;
@@ -57,18 +53,15 @@ pendingSalesElement.textContent = pendingSales;
 
 // Recently Add Sales
 
-transactions.forEach((t) => {
+transactions.forEach(() => {
   let htmlString = `
   <tr>
-      <td>Id</td>
       <td>buyerName</td>
       <td>product</td>
       <td>tonnageSold</td>
       <td>amountPaid</td>
       <td>date</td>
-      <td>balance</td>
       <td>dueDate</td>
-      <td>status</td>
   </tr>
   `;
   dataTableElement.innerHTML = htmlString;

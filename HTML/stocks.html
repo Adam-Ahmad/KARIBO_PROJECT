@@ -6,6 +6,13 @@
     <title>Inventory - Karibu Groceries LTD</title>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Bootstrap Styling -->
     <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
     <!-- Fontawesome Styling -->
@@ -14,136 +21,197 @@
     <link rel="stylesheet" href="/CSS/stocks.css" />
   </head>
   <body>
-    <div class="container-fluid m-0 p-0">
-      <!-- Sidebar -->
-      <aside
-        class="sidebar rounded-top w-sidebar-width bg-white position-fixed h-100 px-3 shadow-sm"
-        id="navbarSupportedContent"
-      >
-        <div class="p-3">
-          <!-- Logo -->
-          <a
-            class="navbar-brand pb-4 d-block text-center mb-1"
-            href="dashboard.html"
+    <!-- Sidebar (Offcanvas on mobile, fixed on desktop) -->
+    <div
+      class="offcanvas-lg offcanvas-start sidebar-width bg-white border-end position-fixed h-100"
+      tabindex="-1"
+      id="sidebarMenu"
+      aria-labelledby="sidebarMenuLabel"
+      style="z-index: 1045"
+    >
+      <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title fw-bold" id="sidebarMenuLabel">
+          Karibu Groceries
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#sidebarMenu"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column p-3 h-100 overflow-y-auto">
+        <!-- Logo -->
+        <a
+          class="navbar-brand pb-4 d-block text-center mb-1"
+          href="dashboard.html"
+        >
+          <img src="/logo/karibu_logo.svg" alt="Karibu" height="60" />
+        </a>
+        <!-- Navigation Links -->
+        <ul class="nav flex-column gap-2">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link"
+              ><i class="fas fa-gauge me-2"></i> Dashboard</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="procurement.html" class="nav-link"
+              ><i class="fas fa-truck me-2"></i> Procurement</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="cash_sales.html" class="nav-link"
+              ><i class="fas fa-money-bill-wave me-2"></i> Cash Sales</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="credit_sales.html" class="nav-link"
+              ><i class="fas fa-credit-card me-2"></i> Credit Sales</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="stocks.html" class="nav-link active"
+              ><i class="fas fa-boxes-stacked me-2"></i> Stock</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="reports.html" class="nav-link"
+              ><i class="fas fa-chart-line me-2"></i> Reports</a
+            >
+          </li>
+        </ul>
+        <div class="mt-auto">
+          <hr />
+          <a href="login.html" class="nav-link text-danger"
+            ><i class="fas fa-right-from-bracket me-2"></i> Logout</a
           >
-            <img src="/logo/karibu_logo.svg" alt="Karibu" height="60" />
-          </a>
-          <!-- Navigation Links -->
-          <ul class="nav flex-column gap-1">
-            <li class="nav-item">
-              <a href="dashboard.html" class="nav-link"
-                ><i class="fas fa-gauge me-2"></i> Dashboard</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="procurement.html" class="nav-link"
-                ><i class="fas fa-truck me-2"></i> Procurement</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="cash_sales.html" class="nav-link"
-                ><i class="fas fa-money-bill-wave me-2"></i> Cash Sales</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="credit_sales.html" class="nav-link"
-                ><i class="fas fa-credit-card me-2"></i> Credit Sales</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="stocks.html" class="nav-link active"
-                ><i class="fas fa-boxes-stacked me-2"></i> Stock</a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="reports.html" class="nav-link"
-                ><i class="fas fa-chart-line me-2"></i> Reports</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                href="login.html"
-                class="nav-link position-absolute bottom-0 mb-3"
-                ><i class="fas fa-right-from-bracket me-2"></i> Logout</a
-              >
-            </li>
-          </ul>
         </div>
-      </aside>
-      <!--Navbar Toggler -->
-      <nav class="navbar bg-white mb-1 p-3 shadow-sm">
+      </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-content-wrapper min-vh-100 d-flex flex-column">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top px-3">
         <div class="container-fluid">
           <button
-            class="navbar-toggler"
+            class="navbar-toggler border-0"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="true"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
+            aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
+
+          <div class="ms-auto d-flex align-items-center gap-3">
+            <div class="text-end d-none d-sm-block">
+              <div class="fw-bold small text-dark" id="userInfo">
+                Loading...
+              </div>
+              <div
+                class="text-muted small"
+                style="font-size: 0.75rem"
+                id="userRole"
+              >
+                ...
+              </div>
+            </div>
+            <div class="bg-light rounded-circle p-2">
+              <i class="fas fa-user text-secondary"></i>
+            </div>
+          </div>
         </div>
       </nav>
       <!-- Main Content -->
-      <main class="container py-5">
-        <!-- card container -->
-        <div class="card-modern p-4 p-md-5">
-          <h2 class="title-orange text-center mb-5 fw-bold">
-            <i class="fas fa-boxes-stacked me-2"></i> Current Inventory
-          </h2>
-          <!-- Table -->
-          <div class="table-responsive">
-            <table class="table table-hover align-middle">
-              <thead>
-                <tr>
-                  <th>Produce</th>
-                  <th>Tonnage (kg)</th>
-                  <th>Price (UGX/kg)</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Beans</td>
-                  <td>2,450</td>
-                  <td>3,200</td>
-                  <td><span class="status-normal">Normal</span></td>
-                </tr>
-                <tr>
-                  <td>Cow peas</td>
-                  <td>78</td>
-                  <td>4,100</td>
-                  <td><span class="status-critical">Critical - Low</span></td>
-                </tr>
-                <tr>
-                  <td>Grain Maize</td>
-                  <td>1,200</td>
-                  <td>1,800</td>
-                  <td><span class="status-low">Low Stock</span></td>
-                </tr>
-                <tr>
-                  <td>G-nuts</td>
-                  <td>950</td>
-                  <td>5,500</td>
-                  <td><span class="status-normal">Normal</span></td>
-                </tr>
-                <tr>
-                  <td>Soybeans</td>
-                  <td>600</td>
-                  <td>4,800</td>
-                  <td><span class="status-low">Low Stock</span></td>
-                </tr>
-              </tbody>
-            </table>
+      <main class="p-4">
+        <div class="container-fluid">
+          <!-- card container -->
+          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5">
+            <h2 class="title-orange text-center mb-5 fw-bold">
+              <i class="fas fa-boxes-stacked me-2"></i> Current Inventory
+            </h2>
+            <!-- Table -->
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead>
+                  <tr>
+                    <th>Produce</th>
+                    <th>Tonnage (kg)</th>
+                    <th>Price (UGX/kg)</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Beans</td>
+                    <td>2,450</td>
+                    <td>3,200</td>
+                    <td>
+                      <span class="status-normal text-success">Normal</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Cow peas</td>
+                    <td>78</td>
+                    <td>4,100</td>
+                    <td>
+                      <span class="status-critical text-danger"
+                        >Critical - Low</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Grain Maize</td>
+                    <td>1,200</td>
+                    <td>1,800</td>
+                    <td>
+                      <span class="status-low text-warning">Low Stock</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>G-nuts</td>
+                    <td>950</td>
+                    <td>5,500</td>
+                    <td>
+                      <span class="status-normal text-success">Normal</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Soybeans</td>
+                    <td>600</td>
+                    <td>4,800</td>
+                    <td>
+                      <span class="status-low text-warning">Low Stock</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </main>
+      <footer class="text-center py-4 text-muted small">
+        &copy; 2026 Karibu Groceries LTD. All rights reserved.
+      </footer>
     </div>
 
-    <!-- bootstrap Js -->
+    <!-- Bootstrap Js -->
     <script src="/Js/bootstrap.bundle.min.js"></script>
     <script src="/Js/all.min.js"></script>
+    <script>
+      // Simple user info population (optional, for visual consistency)
+      const userDetails = JSON.parse(localStorage.getItem("userDetails"));
+      if (userDetails) {
+        document.getElementById("userInfo").textContent =
+          `${userDetails.firstName.toUpperCase()} ${userDetails.lastName.toUpperCase()}`;
+        document.getElementById("userRole").textContent =
+          `${userDetails.role.toUpperCase()}`;
+      }
+    </script>
   </body>
 </html>

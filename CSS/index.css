@@ -1,13 +1,14 @@
 /* Start main Color */
 :root {
-  --primary: #ef5400;
+  --primary: #ff762d;
   --primary-dark: #c94d00;
 }
 /* End main Color */
 
 /* start Body */
 body {
-  font-family: "Segoe UI", system-ui, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
 }
 /* End Body */
 
@@ -68,3 +69,18 @@ body {
   font-size: 20px;
 }
 /* End Feature */
+
+/* Footer Section */
+footer h4 {
+  color: var(--primary);
+}
+
+.about-icons a {
+  padding: 8px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 24px;
+}
+.about-icons a:hover {
+  color: var(--primary);
+}
