@@ -32,3 +32,11 @@ body {
 .title-orange {
   color: var(--primary);
 }
+
+#userInfo {
+  color: var(--primary-dark);
+}
+
+#userRole {
+  color: var(--primary);
+}

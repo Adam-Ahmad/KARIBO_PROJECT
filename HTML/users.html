@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reports & Analytics - Karibu Groceries LTD</title>
+    <title>Dashboard - Karibu Groceries LTD</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/logo/favicon.svg" />
+    <link rel="icon" href="/logo/favicon.svg" />
     <!-- google fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
     <!-- Fontawesome Styling -->
     <link rel="stylesheet" href="/CSS/all.min.css" />
     <!-- External CSS File -->
-    <link rel="stylesheet" href="/CSS/reports.css" />
+    <link rel="stylesheet" href="/CSS/users.css" />
   </head>
   <body>
     <!-- Sidebar (Offcanvas on mobile, fixed on desktop) -->
@@ -57,7 +57,7 @@
             >
           </li>
           <li class="nav-item">
-            <a href="users.html" class="nav-link"
+            <a href="users.html" class="nav-link active"
               ><i class="fas fa-user me-2"></i> Users</a
             >
           </li>
@@ -82,7 +82,7 @@
             >
           </li>
           <li class="nav-item">
-            <a href="reports.html" class="nav-link active"
+            <a href="reports.html" class="nav-link"
               ><i class="fas fa-chart-line me-2"></i> Reports</a
             >
           </li>
@@ -130,37 +130,103 @@
       <!-- Main Content -->
       <main class="p-4">
         <div class="container-fluid">
-          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5">
-            <h2 class="title-orange text-center mb-5 fw-bold">
-              <i class="fas fa-chart-line me-2"></i> Business Reports &
-              Analytics
-            </h2>
+          <h1 class="title-orange fw-bold">Users</h1>
+          <div
+            class="d-flex align-items-center mt-3 gap-3 bg-white p-3 rounded-4"
+          >
+            <input type="text" class="form-control w-75" placeholder="Search" />
+            <button
+              class="btn btn-orange w-25"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#addUserModal"
+            >
+              <i class="fas fa-user-plus me-2"></i><span>Add User</span>
+            </button>
+          </div>
 
-            <div class="row g-4 mb-5">
-              <div class="col-lg-6">
-                <div class="card bg-light border-0 shadow-sm h-100">
-                  <div class="card-body text-center p-5">
-                    <h4 class="mb-4 text-primary">Sales by Branch</h4>
-                    <p class="text-muted lead mb-0">[Chart will appear here]</p>
-                    <!-- In real implementation: Chart.js / ApexCharts placeholder -->
-                  </div>
+          <!-- User List (Populate with JS) -->
+          <table class="table table-striped mt-3">
+            <thead>
+              <tr class="text-center">
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <!-- User rows will be added here -->
+            </tbody>
+          </table>
+
+          <!-- Add User Modal -->
+          <div
+            class="modal fade"
+            id="addUserModal"
+            tabindex="-1"
+            aria-labelledby="addUserModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title title-orange" id="addUserModalLabel">
+                    <i class="fas fa-user-plus me-2"></i>Add New User
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-orange"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Form for adding users (Add your form elements here) -->
+                  <form id="addUserForm">
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        required
+                        placeholder="Username"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="email"
+                        required
+                        placeholder="Email"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="password"
+                        required
+                        placeholder="Password"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <select class="form-select" id="role" required>
+                        <option value="">Select Role</option>
+                        <option value="director">Director</option>
+                        <option value="manager">Manager</option>
+                        <option value="sales">Sales Agent</option>
+                      </select>
+                    </div>
+                    <button class="btn btn-orange" id="addUserButton">
+                      <i class="fas fa-save me-2"></i>Add User
+                    </button>
+                  </form>
                 </div>
               </div>
-
-              <div class="col-lg-6">
-                <div class="card bg-light border-0 shadow-sm h-100">
-                  <div class="card-body text-center p-5">
-                    <h4 class="mb-4 text-primary">Sales by Produce Type</h4>
-                    <p class="text-muted lead mb-0">[Chart will appear here]</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="text-center bg-white rounded-4 p-5 shadow-sm border">
-              <h4 class="text-muted mb-3">Total Revenue (All Time)</h4>
-              <h1 class="display-4 fw-bold text-success">187,450,000 UGX</h1>
-              <p class="text-muted mt-2">Updated: January 01, 2026</p>
             </div>
           </div>
         </div>
@@ -170,19 +236,10 @@
         &copy; 2026 Karibu Groceries LTD. All rights reserved.
       </footer>
     </div>
-
-    <!-- Bootstrap Js -->
+    <script src="/Js/dashboard.js"></script>
+    <!-- Bootstrap JS -->
     <script src="/Js/bootstrap.bundle.min.js"></script>
     <script src="/Js/all.min.js"></script>
-    <script>
-      // Simple user info population (optional, for visual consistency)
-      const userDetails = JSON.parse(localStorage.getItem("userDetails"));
-      if (userDetails) {
-        document.getElementById("userInfo").textContent =
-          `${userDetails.firstName.toUpperCase()} ${userDetails.lastName.toUpperCase()}`;
-        document.getElementById("userRole").textContent =
-          `${userDetails.role.toUpperCase()}`;
-      }
-    </script>
+    <script src="/Js/users.js"></script>
   </body>
 </html>

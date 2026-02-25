@@ -77,3 +77,11 @@ input:focus {
   background-color: var(--primary-dark);
   color: white;
 }
+
+#userInfo {
+  color: var(--primary-dark);
+}
+
+#userRole {
+  color: var(--primary);
+}

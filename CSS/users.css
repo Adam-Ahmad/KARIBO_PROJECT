@@ -1,0 +1,168 @@
+:root {
+  --primary: #ff762d;
+  --primary-dark: #c94d00;
+}
+body {
+  background-color: #f8f9fa;
+}
+.sidebar-width {
+  width: 280px;
+}
+
+.nav-link {
+  color: #495057;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+.nav-link:hover,
+.nav-link.active {
+  background-color: #fff5eb;
+  color: var(--primary);
+}
+.nav-link.active {
+  font-weight: 700;
+}
+.title-orange {
+  color: var(--primary);
+}
+
+.form-control {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.form-select {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+}
+
+input {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(255, 118, 45, 0.25);
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(255, 118, 45, 0.25);
+}
+
+.btn-orange {
+  background-color: var(--primary-dark);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+}
+
+.btn-orange:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+#userInfo {
+  color: var(--primary-dark);
+}
+
+#userRole {
+  color: var(--primary);
+}
+
+.btn {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+@media (min-width: 992px) {
+  .main-content-wrapper {
+    margin-left: 280px;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar-width {
+    width: 100%;
+  }
+  .main-content-wrapper {
+    margin-left: 0;
+  }
+}
+@media (max-width: 576px) {
+  .table {
+    overflow-x: auto;
+  }
+  .btn {
+    padding: 0.5rem 0.75rem;
+  }
+  .btn-orange {
+    padding: 0.5rem 0.75rem;
+  }
+  .btn-orange span {
+    display: none;
+  }
+  .btn-orange i {
+    margin-right: 0.25rem;
+  }
+  .form-control {
+    padding: 0.5rem 0.75rem;
+  }
+  .form-select {
+    padding: 0.5rem 0.75rem;
+  }
+  .title-orange {
+    font-size: 1.5rem;
+  }
+  .table {
+    font-size: 0.75rem;
+  }
+  .table th {
+    font-size: 0.75rem;
+  }
+  .table td {
+    font-size: 0.75rem;
+  }
+  .table thead {
+    display: none;
+  }
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .table tbody td {
+    display: block;
+    text-align: right;
+  }
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+    padding-right: 0.5rem;
+  }
+  .table tbody td:last-child::before {
+    content: "";
+  }
+  .table tbody td:last-child {
+    text-align: right;
+  }
+  .table tfoot {
+    display: none;
+  }
+}
