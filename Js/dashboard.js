@@ -1,7 +1,6 @@
 // get the data from local storage
 _details = localStorage.getItem("userDetails");
 
-console.log(_details);
 if (!_details) {
   window.location.href = "/HTML/login.html";
 }
@@ -19,11 +18,11 @@ if (!userDetails) {
 }
 
 // Card Informaion
-
 let totalCashSalesElement = document.getElementById("totalCashSales");
 let totalCreditSalesElement = document.getElementById("totalCreditSales");
 let pendingSalesElement = document.getElementById("pendingSales");
 let dataTableElement = document.querySelector("#dataTable");
+
 let transactions = localStorage.getItem("transactions");
 
 if (!transactions) {
@@ -38,13 +37,14 @@ let saleRef = {
   tonnageSold: "",
   amountPaid: "",
   isCredit: false,
-  date: new Date(),
+  time: new Date(),
   dueDate: new Date(),
 };
 
-let totalCashSales = transactions.filter((t) => isCredit === false).length || 0;
+let totalCashSales =
+  transactions.filter((t) => t.amountPaid === true).length || 0;
 let totalCreditSales =
-  transactions.filter((t) => isCredit === true).length || 0;
+  transactions.filter((t) => t.isCredit === true).length || 0;
 let pendingSales = transactions.filter((t) => t.balance > 0).length || 0;
 
 totalCashSalesElement.textContent = totalCashSales;
@@ -53,16 +53,16 @@ pendingSalesElement.textContent = pendingSales;
 
 // Recently Add Sales
 
-transactions.forEach(() => {
+transactions.forEach((t) => {
   let htmlString = `
   <tr>
-      <td>buyerName</td>
-      <td>product</td>
-      <td>tonnageSold</td>
-      <td>amountPaid</td>
-      <td>date</td>
-      <td>dueDate</td>
+    <th>${t.buyerName}</th>
+    <th>${t.product}</th>
+    <th>${t.tonnageSold}</th>
+    <th>${t.amountPaid}</th>
+    <th>${t.time}</th>
+    <th>${t.dueDate}</th>
   </tr>
   `;
-  dataTableElement.innerHTML = htmlString;
+  dataTableElement.innerHTML += htmlString;
 });
