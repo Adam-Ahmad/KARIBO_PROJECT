@@ -1,0 +1,70 @@
+:root {
+  --primary: #ff762d;
+  --primary-dark: #c94d00;
+}
+body {
+  background-color: #f8f9fa;
+}
+.card-icon-bg {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.title-orange {
+  color: var(--primary);
+}
+#userInfo {
+  color: var(--primary-dark);
+}
+
+#userRole {
+  color: var(--primary);
+}
+/* Start toast */
+.toast-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  max-width: 380px;
+}
+
+.toast {
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast.success {
+  background: var(--success);
+}
+
+.toast.error {
+  background: var(--danger);
+}
+
+.toast-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+/* end Toast */

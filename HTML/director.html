@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Karibu Groceries LTD</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/logo/favicon.svg" />
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Styling -->
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css" />
+    <!-- Fontawesome Styling -->
+    <link rel="stylesheet" href="/CSS/all.min.css" />
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="/CSS/director.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Content Wrapper -->
+    <div class="d-flex flex-column min-vh-100">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top px-4">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="manager.html">
+            <img
+              src="/logo/karibu_logo.svg"
+              alt="Karibu"
+              height="50"
+              class="me-2"
+            />
+          </a>
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium gap-3">
+              <li class="nav-item">
+                <a href="#dashboard" class="nav-link">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a href="#users" class="nav-link">Users</a>
+              </li>
+              <li class="nav-item">
+                <a href="#stock" class="nav-link">Stock</a>
+              </li>
+              <li class="nav-item">
+                <a href="#reports" class="nav-link">Reports</a>
+              </li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+              <div class="text-end d-none d-lg-block">
+                <div class="fw-bold small" id="userInfo">Loading...</div>
+                <div
+                  class="small text-muted"
+                  style="font-size: 0.75rem"
+                  id="userRole"
+                >
+                  ...
+                </div>
+              </div>
+              <div class="dropdown">
+                <a
+                  href="#"
+                  class="d-flex align-items-center text-decoration-none"
+                  data-bs-toggle="dropdown"
+                >
+                  <div class="bg-light rounded-circle p-2">
+                    <i class="fas fa-user text-secondary"></i>
+                  </div>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end border-0 shadow-sm rounded-3 mt-2"
+                >
+                  <li>
+                    <a class="dropdown-item text-danger" href="login.html"
+                      ><i class="fas fa-sign-out-alt me-2"></i>Logout</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="p-4">
+        <div class="container">
+          <section id="dashboard" class="mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h1 class="title-orange h3 fw-bold m-0">Dashboard Overview</h1>
+            </div>
+          </section>
+          <!-- report -->
+          <section id="reports" class="mb-5">
+            <div class="card border-0 shadow-sm rounded-4">
+              <div class="card-header bg-white py-3">
+                <h5 class="title-orange mb-0 fw-bold">
+                  <i class="fas fa-chart-line me-2"></i> Business Reports &
+                  Analytics
+                </h5>
+              </div>
+              <div class="card-body p-4">
+                <div class="row g-4 mb-5">
+                  <div class="col-lg-6">
+                    <div class="card bg-light border-0 shadow-sm h-100">
+                      <div class="card-body text-center p-5">
+                        <h2 class="mb-4 title-orange">Maganjo Branch</h2>
+
+                        <h3 class="text-primary mb-2">Cash Sales</h3>
+                        <h5
+                          class="text-success mb-2"
+                          id="totalCashSalesMaganjo"
+                        >
+                          0
+                        </h5>
+                        <h3 class="text-primary mb-2">Credit Sales</h3>
+                        <h5
+                          class="text-success mb-2"
+                          id="totalCreditSalesMaganjo"
+                        >
+                          0
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="card bg-light border-0 shadow-sm h-100">
+                      <div class="card-body text-center p-5">
+                        <h2 class="mb-4 title-orange">Matugga Brach</h2>
+                        <h3 class="text-primary mb-2">Cash Sales</h3>
+                        <h5
+                          class="text-success mb-2"
+                          id="totalCashSalesMatugga"
+                        >
+                          0
+                        </h5>
+                        <h3 class="text-primary mb-2">Credit Sales</h3>
+                        <h5
+                          class="text-success mb-2"
+                          id="totalCreditSalesMatugga"
+                        >
+                          0
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="text-center bg-white rounded-4 p-5 shadow-sm border"
+                >
+                  <h4 class="text-muted mb-3">Total Revenue (All Time)</h4>
+                  <h1 class="display-4 fw-bold text-success" id="totalRevenue">
+                    000 UGX
+                  </h1>
+                  <p class="text-muted mt-2">Updated: January 01, 2026</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- stock -->
+          <section id="stock" class="mb-5">
+            <div class="card border-0 shadow-sm rounded-4">
+              <div class="card-header bg-white py-3">
+                <h5 class="title-orange mb-0 fw-bold">
+                  <i class="fas fa-boxes-stacked me-2"></i> Current Inventory
+                </h5>
+              </div>
+              <div class="card-body p-0">
+                <!-- Table -->
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Produce Name</th>
+                        <th>Tonnage (kg)</th>
+                      </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody">
+                      <!-- Data will be populated by JS-->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- users -->
+          <section id="users" class="mb-5">
+            <div class="card border-0 shadow-sm rounded-4">
+              <div
+                class="card-header bg-white py-3 d-flex justify-content-between align-items-center"
+              >
+                <h5 class="title-orange mb-0 fw-bold">
+                  <i class="fas fa-users me-2"></i> Users Management
+                </h5>
+                <button
+                  class="btn btn-orange btn-sm rounded-pill"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addUserModal"
+                >
+                  <i class="fas fa-user-plus me-1"></i> Add User
+                </button>
+              </div>
+              <div class="card-body p-4">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search users..."
+                  />
+                </div>
+
+                <!-- User List (Populate with JS) -->
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                      <!-- User rows will be added here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add User Modal -->
+            <div
+              class="modal fade"
+              id="addUserModal"
+              tabindex="-1"
+              aria-labelledby="addUserModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title title-orange" id="addUserModalLabel">
+                      <i class="fas fa-user-plus me-2"></i>Add New User
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close btn-orange"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Form for adding users (Add your form elements here) -->
+                    <form id="addUserForm">
+                      <div class="mb-3">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="username"
+                          required
+                          placeholder="Username"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="email"
+                          required
+                          placeholder="Email"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="password"
+                          required
+                          placeholder="Password"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <select class="form-select" id="role" required>
+                          <option value="">Select Role</option>
+                          <option value="Manager">Manager</option>
+                          <option value="SalesAgent">Sales Agent</option>
+                        </select>
+                      </div>
+                      <button
+                        class="btn btn-orange"
+                        id="addUserButton"
+                        type="submit"
+                      >
+                        <i class="fas fa-save me-2"></i>Add User
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="text-center py-4 text-muted small">
+        &copy; 2026 Karibu Groceries LTD. All rights reserved.
+      </footer>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="/Js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/all.min.js"></script>
+    <script src="/Js/director.js"></script>
+  </body>
+</html>

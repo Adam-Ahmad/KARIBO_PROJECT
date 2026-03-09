@@ -1,3 +1,5 @@
+const API_URL = "http://localhost:3000";
+
 // define variables
 let loginBtn = document.querySelector("#loginBtn");
 let usernameElement = document.querySelector("#username");
@@ -22,9 +24,8 @@ function showToast(message, type = "success") {
   }, 3000);
 }
 
-// login form event
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+async function login(event) {
+  event.preventDefault();
   let username = usernameElement.value;
   let password = passwordElement.value;
 
@@ -32,47 +33,48 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     showToast("Please Enter Username and Password.", "error");
     return;
   }
-  const users = [
-    { username: "adam", password: "1234", role: "admin" },
-    { username: "orban", password: "1234", role: "director" },
-    { username: "ahmad", password: "1234", role: "sales agent" },
-  ];
+  try {
+    const response = await fetch(`${API_URL}/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    });
+    // console.log(response);`
+    const users = await response.json();
+    const userDetails = JSON.stringify(users);
+    localStorage.setItem("userDetails", userDetails);
+    // console.log(userDetails);
 
-  const user = users.find(
-    (u) => u.username === username && u.password === password,
-  );
-  // validate user
-  if (user) {
-    showToast(`Login Successfuly! Welcome ${user.role} ${user.username}`);
-    if (user.role === "admin") {
-      setTimeout(() => {
-        window.location.href = "/HTML/dashboard.html";
-      }, 1200);
-    }
-    if (user.role === "director") {
-      setTimeout(() => {
-        window.location.href = "/HTML/dashboard.html";
-      }, 1200);
-    }
-    if (user.role === "sales agent") {
-      setTimeout(() => {
-        window.location.href = "/HTML/dashboard.html";
-      }, 1200);
-    }
+    // console.log(users);
+    if (users.user) {
+      showToast(
+        `Login Successfully! Welcome ${users.user.role} ${users.user.username}`,
+      );
 
-    // store user detail in local storage
-    let userDetails = {
-      username: user.username,
-      firstName: "Adam",
-      lastName: "Ahmad",
-      role: user.role,
-    };
-
-    localStorage.setItem("userDetails", JSON.stringify(userDetails));
-    setTimeout(() => {
-      window.location.href = "/HTML/dashboard.html";
-    }, 1200);
-  } else {
-    showToast("Invalid Username or Password. Pleas Try Again.", "error");
+      // validate
+      if (users.user.role === "manager") {
+        setTimeout(() => {
+          window.location.href = "/HTML/manager.html";
+        }, 1200);
+      }
+      if (users.user.role === "director") {
+        setTimeout(() => {
+          window.location.href = "/HTML/director.html";
+        }, 1200);
+      }
+      if (users.user.role === "salesAgent") {
+        setTimeout(() => {
+          window.location.href = "/HTML/sales_agent.html";
+        }, 1200);
+      }
+    } else {
+      showToast("Invalid username or Password. Please Try Again.", "error");
+    }
+  } catch (error) {
+    console.log(error);
   }
-});
+}
+
+loginBtn.addEventListener("click", login);
