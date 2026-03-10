@@ -143,49 +143,48 @@ displayRecentCreditSales();
 const procurementForm = document.getElementById("procurementForm");
 procurementForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-
-  // Get form values
-  const produceName = document.querySelector("#produceName").value;
-  const produceType = document.querySelector("#produceType").value;
-  const date = document.querySelector("#date").value;
-  const time = document.querySelector("#time").value;
-  const tonnageKg = document.querySelector("#tonnageKg").value;
-  const costUgx = document.querySelector("#costUgx").value;
-  const sellingPrice = document.querySelector("#sellingPrice").value;
-  const dealerName = document.querySelector("#dealerName").value;
-  const branch = document.querySelector("#branch").value;
-  const contact = document.querySelector("#contact").value;
-
-  // Create procurement object
-  const newProcurement = {
-    produceName,
-    produceType,
-    tonnageKg,
-    costUgx,
-    sellingPrice,
-    dealerName,
-    branch,
-    contact,
-    date,
-    time,
-  };
-  if (
-    !newProcurement.produceName ||
-    !newProcurement.produceType ||
-    !newProcurement.tonnageKg ||
-    !newProcurement.costUgx ||
-    !newProcurement.sellingPrice ||
-    !newProcurement.dealerName ||
-    !newProcurement.branch ||
-    !newProcurement.contact ||
-    !newProcurement.date ||
-    !newProcurement.time
-  ) {
-    showToast("Invalid Details. Please Try Again.", "error");
-    return;
-  }
-
   try {
+    // Get form values
+    const produceName = document.getElementById("produceName").value;
+    const produceType = document.getElementById("produceType").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const tonnageKg = document.getElementById("tonnageKg").value;
+    const costUgx = document.getElementById("costUgx").value;
+    const sellingPriceUgx = document.getElementById("sellingPriceUgx").value;
+    const dealerName = document.getElementById("dealerName").value;
+    const branch = document.getElementById("branch").value;
+    const dealerContact = document.getElementById("dealerContact").value;
+
+    // Create procurement object
+    const newProcurement = {
+      produceName,
+      produceType,
+      tonnageKg,
+      costUgx,
+      sellingPriceUgx,
+      dealerName,
+      branch,
+      dealerContact,
+      date,
+      time,
+    };
+    if (
+      !newProcurement.produceName ||
+      !newProcurement.produceType ||
+      !newProcurement.tonnageKg ||
+      !newProcurement.costUgx ||
+      !newProcurement.sellingPriceUgx ||
+      !newProcurement.dealerName ||
+      !newProcurement.branch ||
+      !newProcurement.dealerContact ||
+      !newProcurement.date ||
+      !newProcurement.time
+    ) {
+      showToast("Invalid Details. Please Try Again.", "error");
+      return;
+    }
+
     const response = await fetch(`${API_URL}/addProcurement`, {
       method: "POST",
       headers: {
@@ -205,142 +204,5 @@ procurementForm.addEventListener("submit", async (event) => {
     }
   } catch (error) {
     console.error("Error adding procurement:", error);
-  }
-});
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Add Cach Sales
-const cashSalesForm = document.getElementById("cashSalesForm");
-cashSalesForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  try {
-    // Get form values
-    let produceName = document.getElementById("produceName").value;
-    let tonnageSold = document.getElementById("tonnageSold").value;
-    let amountPaid = document.getElementById("amountPaid").value;
-    let buyerName = document.getElementById("buyerName").value;
-    let salesAgentName = document.getElementById("salesAgentName").value;
-    let date = document.getElementById("date").value;
-    let time = document.getElementById("time").value;
-    let branch = document.getElementById("branch").value;
-
-    // Create cashSales object
-
-    const newCashSales = {
-      produceName,
-      tonnageSold,
-      amountPaid,
-      buyerName,
-      salesAgentName,
-      branch,
-      date,
-      time,
-    };
-
-    if (
-      !produceName ||
-      !tonnageSold ||
-      !amountPaid ||
-      !buyerName ||
-      !salesAgentName ||
-      !branch ||
-      !date ||
-      !time
-    ) {
-      showToast("Invalid Details. Please Try Again.", "error");
-      return;
-    }
-
-    const response = await fetch(`${API_URL}/addCashSales`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newCashSales),
-    });
-
-    if (response.ok) {
-      showToast("Added Successfully!");
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
-      // Clear the form
-      cashSalesForm.reset();
-    }
-  } catch (error) {
-    console.error("Error adding cashSales:", error);
-  }
-});
-// /////////////////////////////////////////////////////////////////////////////////////////////
-// Add Credit Sales
-const creditSalesForm = document.getElementById("creditSalesForm");
-creditSalesForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  try {
-    // Get form values
-    let produce = document.getElementById("produce").value;
-    let tonnageKg = document.getElementById("tonnageKg").value;
-    let amountDueUgx = document.getElementById("amountDueUgx").value;
-    let buyer = document.getElementById("buyer").value;
-    let salesAgent = document.getElementById("salesAgent").value;
-    let dueDate = document.getElementById("dueDate").value;
-    let dispatchDate = document.getElementById("dispatchDate").value;
-    let branchName = document.getElementById("branchName").value;
-    let nationalId = document.getElementById("nationalId").value;
-    let produceType = document.getElementById("produceType").value;
-    let contact = document.getElementById("contact").value;
-    let location = document.getElementById("location").value;
-    // Create creditSales object
-
-    const newCreditSales = {
-      produce,
-      tonnageKg,
-      amountDueUgx,
-      buyer,
-      salesAgent,
-      nationalId,
-      produceType,
-      contact,
-      location,
-      branchName,
-      dueDate,
-      dispatchDate,
-    };
-    console.log(newCreditSales);
-    if (
-      !produce ||
-      !tonnageKg ||
-      !amountDueUgx ||
-      !buyer ||
-      !salesAgent ||
-      !branchName ||
-      !nationalId ||
-      !produceType ||
-      !contact ||
-      !location ||
-      !dueDate ||
-      !dispatchDate
-    ) {
-      showToast("Invalid Details. Please Try Again.", "error");
-      return;
-    }
-
-    const response = await fetch(`${API_URL}/addCreditSales`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newCreditSales),
-    });
-
-    if (response.ok) {
-      showToast("Added Successfully!");
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
-      // Clear the form
-      creditSalesForm.reset();
-    }
-  } catch (error) {
-    console.error("Error adding creditSales:", error);
   }
 });
