@@ -47,11 +47,11 @@ kgl-app/
 ├── frontend/
 │ ├── css/ (styles.css)
 │ ├── js/ (scripts.js, auth.js)
-│ ├── index.html (login)
+│ ├── index.html (landing page)
+| ├── login.html
 │ ├── dashboard.html
-│ ├── procurement.html
-│ ├── sales.html
-│ ├── credit.html
-│ ├── stocks.html
+│ ├── manager.html
+│ ├── salesagent.html
+│ ├── director.html
 │ └── reports.html
 └── README.md
